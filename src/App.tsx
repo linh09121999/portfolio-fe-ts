@@ -8,7 +8,7 @@ const Home = React.lazy(() => import('./view/index'));
 const ProtectedRoute: React.FC = () => {
   // const { isMobile } = useGlobalContext();
   return (
-    <div className="flex flex-col w-full" style={{ height: "100vh", backgroundColor: '#007bff' }}>
+    <div className="flex flex-col w-full h-[100vh] bg-[url(./assets/img/bg.png)]" >
       {/* <!-- Header --> */}
       <Header />
       <Nav />
