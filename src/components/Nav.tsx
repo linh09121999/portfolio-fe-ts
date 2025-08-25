@@ -6,7 +6,7 @@ const Nav: React.FC = () => {
     return (
         <ul className='flex list-none'>
             {pages.map((page, index) => (
-                <li key={index} className='ml-[30px]'>
+                <li key={index} className='mx-[20px]'>
                     <a
                         onClick={() => {
                             setSelectNav(index)

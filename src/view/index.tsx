@@ -1,13 +1,21 @@
 import React from "react";
-import { useGlobal } from '../context/GlobalContext';
+import About from "./About";
+import Contacts from "./Contact";
+import Home from "./Home";
+import Projects from "./Projects";
+import Skills from "./Skills";
 
-const Home: React.FC = () => {
+const Index: React.FC = () => {
 
-    const {  } = useGlobal();
     return (
-        <div className="text-3xl font-bold underline flex items-center justify-center h-full" > 
-        </div>
+        <>
+            <Home />
+            <About />
+            <Skills />
+            <Projects />
+            <Contacts />
+        </>
     )
 }
 
-export default Home;
+export default Index;
