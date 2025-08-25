@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import { HashRouter, Route, Routes, Navigate, Outlet, BrowserRouter } from 'react-router-dom';
 
-import { Footer, Header, Nav } from './components';
+import { Footer, Header } from './components';
 
 const Home = React.lazy(() => import('./view/index'));
 
@@ -10,10 +10,12 @@ const ProtectedRoute: React.FC = () => {
   return (
     <div className="flex flex-col w-full h-[100vh] bg-[url(./assets/img/bg.png)]" >
       {/* <!-- Header --> */}
-      <Header />
-      <Nav />
-      <Outlet />
-      <Footer />
+      <div className='w-[1350px] flex-col mx-auto'>
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+
     </div>
 
   );
