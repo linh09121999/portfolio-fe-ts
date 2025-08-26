@@ -8,13 +8,11 @@ const Home = React.lazy(() => import('./view/index'));
 const ProtectedRoute: React.FC = () => {
   // const { isMobile } = useGlobalContext();
   return (
-    <div className="flex flex-col w-full h-[100vh] bg-[url(./assets/img/bg.png)] object-cover" >
+    <div className="flex flex-col w-full h-[100vh] " >
       {/* <!-- Header --> */}
-      <div className='w-[1350px] flex-col mx-auto'>
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
+      <Header />
+      <Outlet />
+      <Footer />
 
     </div>
 

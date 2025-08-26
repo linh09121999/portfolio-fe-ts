@@ -96,6 +96,7 @@ export interface GlobalState {
     pages: Pages[];
     socialMedia: SocialMedia[];
     home: Home;
+    welcomeText: String;
 }
 
 
@@ -104,13 +105,15 @@ const GlobalContext = createContext<GlobalState | undefined>(undefined);
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     const name = "Linhcct"
     const [selectNav, setSelectNav] = useState<number>(0);
+    const welcomeText = "Welcome to my portfolio 👋"
 
     const value = {
         name,
         pages: defaultPages,
         socialMedia: defaultSocialMedia,
         selectNav, setSelectNav,
-        home: defaultHome
+        home: defaultHome,
+        welcomeText,
     }
 
     return (
