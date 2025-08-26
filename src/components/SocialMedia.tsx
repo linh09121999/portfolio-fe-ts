@@ -8,7 +8,7 @@ const SocialMedia: React.FC = () => {
             {socialMedia.map((social, index) => (
                 <li key={index}>
                     <a href={`${social.link}`}
-                    className='text-amber-100 hover:text-amber-200'>
+                    className='hover:text-white text-green-200'>
                         {social.icon}
                     </a>
                 </li>
