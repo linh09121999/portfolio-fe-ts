@@ -1,15 +1,16 @@
 import React, { Suspense, useEffect } from 'react';
 import { HashRouter, Route, Routes, Navigate, Outlet, BrowserRouter } from 'react-router-dom';
 
-import { Footer, Header } from './components';
+import { Footer, Header, BackToTop } from './components';
 
 const Home = React.lazy(() => import('./view/index'));
 
 const ProtectedRoute: React.FC = () => {
   // const { isMobile } = useGlobalContext();
   return (
-    <div className="flex flex-col w-full h-[100vh] " >
+    <div className="flex flex-col w-full h-[100vh]" >
       {/* <!-- Header --> */}
+      <BackToTop />
       <Header />
       <Outlet />
       <Footer />

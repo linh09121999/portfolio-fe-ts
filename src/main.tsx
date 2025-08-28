@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import './index.css';
 import { GlobalProvider } from "./context/GlobalContext";
+import "./assets/css/index.css"
 
 
 const initializeApp = async (): Promise<void> => {
