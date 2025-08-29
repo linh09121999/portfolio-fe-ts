@@ -43,7 +43,7 @@ const BackToTop: React.FC = () => {
                     className="shadow-lg transition-all duration-300 fixed bottom-[24px] right-[30px] text-white rounded-full flex items-center justify-center z-10 hover:translate-y-[-3px]"
 
                 >
-                    <CircularProgress variant="determinate" value={scrollPercent} size="60px" sx={{ color: "var(--color-green-200)" }} />
+                    <CircularProgress variant="determinate" value={scrollPercent} size="50px" sx={{ color: "var(--color-green-200)" }} />
                     <Box
                         sx={{
                             position: 'absolute',

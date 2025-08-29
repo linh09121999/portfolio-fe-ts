@@ -26,13 +26,13 @@ const Home: React.FC = () => {
             className="w-[1350px] mx-auto flex items-center justify-between mt-[150px]"
             >
             <div
-                className="grid gap-6 items-center w-[45%]"
+                className="grid gap-10 items-center w-[45%]"
                 data-aos="fade-right"
                 data-aos-delay="200"
             >
-                <p className="text-white text-[24px]">{home.textHello}</p>
-                <p className="bg-gradient-to-r from-white to-green-600 bg-clip-text text-transparent text-[100px] font-bold">{home.title}</p>
-                <p className="text-white/50 text-[18px]">{home.slogan}</p>
+                <p className="text-white text-2xl">{home.textHello}</p>
+                <p className="bg-gradient-to-r from-white to-green-600 bg-clip-text text-transparent text-8xl font-bold">{home.title}</p>
+                <p className="text-white/50 text-xl">{home.slogan}</p>
             </div>
             <img
                 alt={`${home.altImg}`}
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
                 data-aos-delay="200"
             />
             <button
-                className="flex group  relative inline-flex mb-[70px] gap-2 place-self-end text-[18px] text-green-100 items-center before:content-[''] before:absolute before:left-[-20px] before:w-[100px] before:h-[100px] before:border-[4px] before:border-green-100 before:rounded-full  before:border-r-0 before:border-b-0 before:rotate-[-45deg]"
+                className="flex group z-100 relative inline-flex mb-[70px] gap-2 place-self-end text-xl text-green-100 items-center before:content-[''] before:absolute before:left-[-20px] before:w-[100px] before:h-[100px] before:border-[5px] before:border-green-100 before:rounded-full  before:border-r-0 before:border-b-0 before:rotate-[-45deg]"
                 data-aos="fade-left"
                 data-aos-delay="300"
                 onClick={handleClickContact}

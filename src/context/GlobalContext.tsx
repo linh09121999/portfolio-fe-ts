@@ -12,14 +12,26 @@ import {
     FaAngleDoubleUp,
     FaLaptopCode,
     FaUsers,
-    FaLightbulb
+    FaLightbulb,
+    FaCode,
+    FaHtml5,
+    FaCss3Alt,
+    FaGitAlt
 } from "react-icons/fa";
 import { CgMenu } from "react-icons/cg";
 import {
     IoShieldCheckmark,
     IoClose,
-    IoSparkles
+    IoSparkles,
+    IoLayersSharp
 } from "react-icons/io5";
+import { MdLayers } from "react-icons/md";
+import { VscVscodeInsiders, VscVscode } from "react-icons/vsc";
+import { SiFramework, SiAdobeillustrator } from "react-icons/si";
+import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
+import { RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
+import { BsLayers } from "react-icons/bs";
+
 
 import imgLinh1 from "../assets/img/linh1.png"
 import imgLinh2 from "../assets/img/linh2.png"
@@ -159,7 +171,7 @@ export interface About {
     id: string;
     slogan: string;
     title: string;
-    descs: string;
+    desc: string;
     strengths: Strengths[];
     altImg: string;
     img: string;
@@ -168,9 +180,9 @@ export interface About {
 
 const defaultAbout: About = {
     id: "about",
-    slogan: "Frontend is not just about code, it's about experience.",
+    slogan: "Frontend is experience, not just code",
     title: "ABOUT ME",
-    descs: "Frontend Developer với kinh nghiệm chuyên sâu về ReactJS, tập trung vào việc phát triển các giao diện số tối ưu, thân thiện người dùng và được xây dựng từ mã code sạch. Tôi cam kết biến các thiết kế UX/UI phức tạp thành những trải nghiệm web mượt mà và hiệu quả.",
+    desc: "Frontend Developer specializing in ReactJS. Focused on building optimized, user-friendly digital interfaces from clean code to transform complex UX/UI designs into smooth and efficient web experiences.",
     strengths: defaultStrengths,
     altImg: "image linh 1",
     img: imgLinh2,
@@ -189,6 +201,182 @@ const defaultIcons: Icons = {
     iconBackToTop: <FaAngleDoubleUp />,
 }
 
+export interface DetailSkills {
+    icon: JSX.Element;
+    title: string;
+    ratio: number;
+    categories: number[],
+}
+
+const defaultDetailSkills: DetailSkills[] = [
+    {
+        icon: <BiLogoJavascript />,
+        title: "JavaScript",
+        ratio: 90,
+        categories: [1, 2]
+    },
+    {
+        icon: <BiLogoTypescript />,
+        title: "TypeScript",
+        ratio: 70,
+        categories: [1, 2]
+    },
+    {
+        icon: <RiReactjsLine />,
+        title: "ReactJS",
+        ratio: 85,
+        categories: [1, 3]
+    },
+    {
+        icon: <FaHtml5 />,
+        title: "HTML5",
+        ratio: 95,
+        categories: [1, 2]
+    },
+    {
+        icon: <FaCss3Alt />,
+        title: "CSS3",
+        ratio: 95,
+        categories: [1, 2]
+    },
+    {
+        icon: <RiTailwindCssFill />,
+        title: "Tailwind CSS",
+        ratio: 90,
+        categories: [1, 3]
+    },
+    {
+        icon: <FaGitAlt />,
+        title: "Git",
+        ratio: 90,
+        categories: [1, 4]
+    },
+    {
+        icon: <VscVscode />,
+        title: "VS Code",
+        ratio: 90,
+        categories: [1, 4]
+    },
+    {
+        icon: <SiAdobeillustrator />,
+        title: "Adobe Illustrator",
+        ratio: 80,
+        categories: [1, 4]
+    },
+]
+
+export interface TabsSkills {
+    icon: JSX.Element;
+    title: string;
+    categories: number;
+}
+
+const defaultTabsSkills: TabsSkills[] = [
+    {
+        icon: <BsLayers size={18} />,
+        title: "View all",
+        categories: 1
+    },
+    {
+        icon: <FaCode />,
+        title: "Languages",
+        categories: 2
+    },
+    {
+        icon: <SiFramework size={18} />,
+        title: "Frameworks",
+        categories: 3
+    },
+    {
+        icon: <VscVscodeInsiders />,
+        title: "Tools & Design",
+        categories: 4
+    }
+]
+
+export interface Skill {
+    id: string;
+    slogan: string;
+    title: string;
+    desc: string;
+    tabs: TabsSkills[];
+    details: DetailSkills[];
+}
+
+const defaultSkills: Skill = {
+    id: "skills",
+    slogan: "The UX-Focused Developer",
+    title: "MY SKILLS",
+    desc: "A frontend developer dedicated to transforming UX/UI designs into fast, functional, and accessible code. Focused on performance, semantics, and creating seamless user interactions.",
+    tabs: defaultTabsSkills,
+    details: defaultDetailSkills
+}
+
+export interface DetailProjects {
+    img: string;
+    title: string;
+    desc: string;
+    skills: string[];
+    link: string;
+}
+
+const defaultDetailProjects: DetailProjects[] = [
+    {
+        img: "",
+        title: "",
+        desc: "",
+        skills: ["", "", ""],
+        link: "",
+    },
+    {
+        img: "",
+        title: "",
+        desc: "",
+        skills: ["", "", ""],
+        link: "",
+    },
+    {
+        img: "",
+        title: "",
+        desc: "",
+        skills: ["", "", ""],
+        link: "",
+    }
+]
+
+export interface Project {
+    id: string;
+    slogan: string;
+    title: string;
+    desc: string;
+    details: DetailProjects[]
+}
+
+const defaultProject: Project = {
+    id: "projects",
+    slogan: "",
+    title: "MY PROJECTS",
+    desc: "",
+    details: defaultDetailProjects
+}
+
+export interface Contact{
+    id: string;
+    slogan: string;
+    title: string;
+    desc: string;
+    btnContact: string;
+    localMap: string;
+}
+
+const defaultContact: Contact = {
+    id: "contact",
+    slogan: "",
+    title: "CONTACT ME",
+    desc: "",
+    btnContact: "Get In Touch",
+    localMap: "No Ban Village, Hong Van Commune, Hanoi"
+}
 
 export interface GlobalState {
     name: string | null;
@@ -204,6 +392,9 @@ export interface GlobalState {
     home: Home;
     welcomeText: string;
     about: About;
+    skill: Skill;
+    project: Project;
+    contact: Contact;
 }
 
 
@@ -258,6 +449,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     }, [refs]);
 
     const isMobile = useMediaQuery("(max-width:768px)");
+    
     const value = {
         name,
         pages: defaultPages,
@@ -271,6 +463,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         refs,
         scrollTo,
         offset,
+        skill: defaultSkills,
+        project: defaultProject,
+        contact: defaultContact,
     }
 
     return (
