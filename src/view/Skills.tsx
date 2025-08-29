@@ -21,7 +21,7 @@ const Skills: React.FC = () => {
 
     return (
         <section ref={refs[skill.id]} className="bg-black/60" >
-            <div className="w-[1350px] mx-auto items-center justify-between py-[50px]">
+            <div className="w-[1350px] mx-auto items-center justify-between pt-[50px] pb-[70px]">
                 <div
                     className='grid gap-12 mx-auto max-w-3xl pb-12 text-center md:pb-20'
                     data-aos="fade-up"
@@ -50,7 +50,7 @@ const Skills: React.FC = () => {
                         <div className="relative inline-flex flex-wrap justify-center rounded-[1.25rem] bg-gray-800/40 p-1">
                             {skill.tabs.map((tab, id1) => (
                                 <button key={id1}
-                                    className={`flex h-8 flex-1 text-white/70 text-xl items-center gap-2.5 whitespace-nowrap rounded-full px-3 text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-green-200 ${category === tab.categories ? "relative bg-green-400/10 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-green-500/0),--theme(--color-green-500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] " : "opacity-65 transition-opacity hover:opacity-90"}`}
+                                    className={`flex h-8 flex-1 text-white text-xl items-center gap-2.5 whitespace-nowrap rounded-full px-3 text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-green-200 ${category === tab.categories ? "relative bg-green-400/10 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,--theme(--color-green-500/0),--theme(--color-green-500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] " : "opacity-30 transition-opacity hover:opacity-90"}`}
                                     onClick={() => setCategory(tab.categories)}
                                 >
                                     <svg
@@ -75,9 +75,16 @@ const Skills: React.FC = () => {
                                 data-aos-delay={`${(id2 + 1) * 300}`}
                             >
                                 <article
-                                    className={`h-full flex flex-col justify-between  relative rounded-[20px] bg-white/10 p-5 backdrop-blur-[10px] transition-opacity border-[1px] border-white/10  ${!detail.categories.includes(category) ? "opacity-30" : ""}`}
+                                    className={`h-full flex flex-col justify-between  relative rounded-[20px] bg-white/10 p-[30px] backdrop-blur-[10px] transition-opacity border-[1px] border-white/10  ${!detail.categories.includes(category) ? "opacity-30" : ""}`}
                                 >
-
+                                    <div className="text-green-400 text-3xl mb-4">
+                                        {detail.icon}
+                                    </div>
+                                    <h3 className="text-xl font-nacelle text-white mb-2">{detail.title}</h3>
+                                    <p className="text-white/50 mb-4 text-xl">{detail.desc}</p>
+                                    <div className="w-full bg-green-400/10 rounded-full h-2.5">
+                                        <div className="skill-bar bg-gradient-to-r from-green-400/40 to-green-400 h-2.5 rounded-full" style={{ width: `${detail.ratio}%` }}></div>
+                                    </div>
                                 </article>
                             </div>
                         ))}

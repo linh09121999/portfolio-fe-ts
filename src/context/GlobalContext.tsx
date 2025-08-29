@@ -204,6 +204,7 @@ const defaultIcons: Icons = {
 export interface DetailSkills {
     icon: JSX.Element;
     title: string;
+    desc: string;
     ratio: number;
     categories: number[],
 }
@@ -212,54 +213,63 @@ const defaultDetailSkills: DetailSkills[] = [
     {
         icon: <BiLogoJavascript />,
         title: "JavaScript",
+        desc: "The world's most popular programming language for creating dynamic and interactive web content.",
         ratio: 90,
         categories: [1, 2]
     },
     {
         icon: <BiLogoTypescript />,
         title: "TypeScript",
+        desc: "JavaScript with superpowers: a strongly typed superset that enables more robust and scalable code.",
         ratio: 70,
         categories: [1, 2]
     },
     {
         icon: <RiReactjsLine />,
         title: "ReactJS",
+        desc: "A powerful and popular JavaScript library for building flexible and reusable user interfaces (UIs).",
         ratio: 85,
         categories: [1, 3]
     },
     {
         icon: <FaHtml5 />,
         title: "HTML5",
+        desc: "The latest core web technology, introducing semantic tags and powerful APIs for rich media and complex applications.",
         ratio: 95,
         categories: [1, 2]
     },
     {
         icon: <FaCss3Alt />,
         title: "CSS3",
+        desc: "The modern standard for web styling, providing features like flexbox, grid, animations, and responsive design.",
         ratio: 95,
         categories: [1, 2]
     },
     {
         icon: <RiTailwindCssFill />,
         title: "Tailwind CSS",
+        desc: "A utility-first CSS framework for rapidly building custom designs directly in your markup.",
         ratio: 90,
         categories: [1, 3]
     },
     {
         icon: <FaGitAlt />,
         title: "Git",
+        desc: "The industry-standard distributed version control system for tracking code changes and enabling team collaboration.",
         ratio: 90,
         categories: [1, 4]
     },
     {
         icon: <VscVscode />,
         title: "VS Code",
+        desc: "A lightweight, powerful, and highly customizable source code editor from Microsoft with support for virtually any language.",
         ratio: 90,
         categories: [1, 4]
     },
     {
         icon: <SiAdobeillustrator />,
         title: "Adobe Illustrator",
+        desc: "The industry-leading vector graphics software for creating logos, icons, illustrations, and print layouts.",
         ratio: 80,
         categories: [1, 4]
     },
