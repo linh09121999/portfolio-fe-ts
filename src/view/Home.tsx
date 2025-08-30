@@ -42,7 +42,7 @@ const Home: React.FC = () => {
                 data-aos-delay="200"
             />
             <button
-                className="flex group z-100 relative inline-flex mb-[70px] gap-2 place-self-end text-xl text-green-100 items-center before:content-[''] before:absolute before:left-[-20px] before:w-[100px] before:h-[100px] before:border-[5px] before:border-green-100 before:rounded-full  before:border-r-0 before:border-b-0 before:rotate-[-45deg]"
+                className="flex group z-1000 relative inline-flex mb-[70px] gap-2 place-self-end text-xl text-green-100 items-center before:content-[''] before:absolute before:left-[-20px] before:w-[100px] before:h-[100px] before:border-[5px] before:border-green-100 before:rounded-full  before:border-r-0 before:border-b-0 before:rotate-[-45deg]"
                 data-aos="fade-left"
                 data-aos-delay="300"
                 onClick={handleClickContact}

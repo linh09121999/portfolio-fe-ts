@@ -35,7 +35,6 @@ import { BsLayers } from "react-icons/bs";
 
 import imgLinh1 from "../assets/img/linh1.png"
 import imgLinh2 from "../assets/img/linh2.png"
-
 export interface Pages {
     id: string;
     title: string;
@@ -370,7 +369,7 @@ const defaultProject: Project = {
     details: defaultDetailProjects
 }
 
-export interface Contact{
+export interface Contact {
     id: string;
     slogan: string;
     title: string;
@@ -405,6 +404,7 @@ export interface GlobalState {
     skill: Skill;
     project: Project;
     contact: Contact;
+    gmailUrl: string;
 }
 
 
@@ -459,7 +459,15 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     }, [refs]);
 
     const isMobile = useMediaQuery("(max-width:768px)");
-    
+
+    const textSubject = "Chào bạn"
+    const textBody = "Tôi muốn liên hệ với bạn qua email này."
+    const email = "linhct020328@gmail.com"
+
+    const subject = encodeURIComponent(textSubject);
+    const body = encodeURIComponent(textBody);
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+
     const value = {
         name,
         pages: defaultPages,
@@ -476,6 +484,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         skill: defaultSkills,
         project: defaultProject,
         contact: defaultContact,
+        gmailUrl
     }
 
     return (
