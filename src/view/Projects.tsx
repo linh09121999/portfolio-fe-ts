@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <img
-                                    className="inline-flex w-full h-auto transition duration-300 ease-in-out transform opacity-100 group-hover/card:opacity-35 group-hover/card:scale-105"
+                                    className="inline-flex aspect-video transition duration-300 ease-in-out transform opacity-100 group-hover/card:opacity-35 group-hover/card:scale-105"
                                     src={item.img}
                                     alt={item.title}
                                 />
