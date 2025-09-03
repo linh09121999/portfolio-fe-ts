@@ -6,7 +6,7 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import Marquee from "react-fast-marquee";
 
-import Spotlight from "./spotlight";
+import Spotlight from "../components/spotlight";
 
 import { useGlobal } from "../context/GlobalContext";
 

@@ -336,23 +336,30 @@ export interface DetailProjects {
 const defaultDetailProjects: DetailProjects[] = [
     {
         img: "",
-        title: "",
+        title: "Cơ sở dữ liệu thi hành kỷ luật Đảng",
         desc: "",
-        skills: ["", "", ""],
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        link: "",
+    },
+    {
+        img: "",
+        title: "Hệ thống quản lý hồ sơ Scan",
+        desc: "",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        link: "",
+    },
+    {
+        img: "",
+        title: "Báo cáo đối soát dịch vụ DTA",
+        desc: "",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "",
     },
     {
         img: "",
         title: "",
         desc: "",
-        skills: ["", "", ""],
-        link: "",
-    },
-    {
-        img: "",
-        title: "",
-        desc: "",
-        skills: ["", "", ""],
+        skills: [ "ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "",
     }
 ]
@@ -362,7 +369,8 @@ export interface Project {
     slogan: string;
     title: string;
     desc: string;
-    details: DetailProjects[]
+    details: DetailProjects[],
+    icon: JSX.Element
 }
 
 const defaultProject: Project = {
@@ -370,7 +378,8 @@ const defaultProject: Project = {
     slogan: "Intuitive, User-Friendly, Efficient",
     title: "MY PROJECTS",
     desc: "Contributed to developing the user interface for an internal management application, focusing on intuitive design and optimizing user workflows.",
-    details: defaultDetailProjects
+    details: defaultDetailProjects,
+    icon: <></>
 }
 
 

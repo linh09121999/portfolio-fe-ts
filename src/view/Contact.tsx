@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useGlobal } from "../context/GlobalContext";
-import MapGoogle from './MapGoogle';
+import MapGoogle from '../components/MapGoogle';
 import { Button, TextField, Box } from '@mui/material';
 import type { SxProps, Theme } from "@mui/material/styles";
 import type { ContentSend } from '../context/GlobalContext';
