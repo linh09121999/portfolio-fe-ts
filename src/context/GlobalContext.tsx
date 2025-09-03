@@ -9,6 +9,8 @@ import {
     FaPlayCircle,
     FaHome,
     FaMailBulk,
+    FaMapMarkerAlt,
+    FaPhoneAlt,
     FaAngleDoubleUp,
     FaLaptopCode,
     FaUsers,
@@ -191,13 +193,15 @@ const defaultAbout: About = {
 export interface Icons {
     iconMenu: JSX.Element;
     iconClose: JSX.Element;
-    iconBackToTop: JSX.Element
+    iconBackToTop: JSX.Element;
+    iconMap: JSX.Element;
 }
 
 const defaultIcons: Icons = {
     iconMenu: <CgMenu />,
     iconClose: <IoClose />,
     iconBackToTop: <FaAngleDoubleUp />,
+    iconMap: <FaMapMarkerAlt size={30} />
 }
 
 export interface DetailSkills {
@@ -363,10 +367,45 @@ export interface Project {
 
 const defaultProject: Project = {
     id: "projects",
-    slogan: "",
+    slogan: "Intuitive, User-Friendly, Efficient",
     title: "MY PROJECTS",
-    desc: "",
+    desc: "Contributed to developing the user interface for an internal management application, focusing on intuitive design and optimizing user workflows.",
     details: defaultDetailProjects
+}
+
+
+export interface contactIntro extends Intro {
+    icon: JSX.Element
+}
+
+const defaultContactIntro: contactIntro[] = [
+    {
+        icon: <FaMailBulk />,
+        title: "Email",
+        desc: "Linhct020328@gmail.com",
+    },
+    {
+        icon: <FaPhoneAlt />,
+        title: "Phone",
+        desc: "(+84) 962 059 262",
+    },
+    {
+        icon: <FaMapMarkerAlt />,
+        title: "Address",
+        desc: "No Ban Village, Hong Van Commune, Hanoi",
+    }
+]
+
+export interface FormSubmit {
+    formName: string;
+    formEmail: string;
+    formMessage: string;
+}
+
+const defaultFormSubmit: FormSubmit = {
+    formName: "Your Name",
+    formEmail: "Your Email",
+    formMessage: "Your Message",
 }
 
 export interface Contact {
@@ -376,16 +415,40 @@ export interface Contact {
     desc: string;
     btnContact: string;
     localMap: string;
+    contactIntro: contactIntro[],
+    formSubmit: FormSubmit
 }
 
 const defaultContact: Contact = {
     id: "contact",
-    slogan: "",
+    slogan: "Let's Contact",
     title: "CONTACT ME",
-    desc: "",
-    btnContact: "Get In Touch",
-    localMap: "No Ban Village, Hong Van Commune, Hanoi"
+    desc: "Always open to discussions, collaborations, and new opportunities. Feel free to get in touch and let’s create impactful products together.",
+    btnContact: "Send Message",
+    localMap: "No Ban Village, Hong Van Commune, Hanoi",
+    contactIntro: defaultContactIntro,
+    formSubmit: defaultFormSubmit
 }
+
+export type LatLng = {
+    lat: number;
+    lng: number;
+};
+
+export interface ContentSend {
+    contentName: string;
+    // setContentName: (value: string) => void;
+    contentEmail: string;
+    // setContentEmail: (value: string) => void;
+    contentMessage: string;
+    // setContentMessage: (value: string) => void;
+}
+
+const initialContent: ContentSend = {
+    contentName: '',
+    contentEmail: '',
+    contentMessage: ''
+};
 
 export interface GlobalState {
     name: string | null;
@@ -400,11 +463,16 @@ export interface GlobalState {
     socialMedia: SocialMedia[];
     home: Home;
     welcomeText: string;
+    marqueeContact: string[];
     about: About;
     skill: Skill;
     project: Project;
     contact: Contact;
     gmailUrl: string;
+    mapApiKey: string;
+    mapCenter: LatLng;
+    contentSend: ContentSend;
+    setContentSend: React.Dispatch<React.SetStateAction<ContentSend>>;
 }
 
 
@@ -460,13 +528,19 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
 
     const isMobile = useMediaQuery("(max-width:768px)");
 
-    const textSubject = "Chào bạn"
-    const textBody = "Tôi muốn liên hệ với bạn qua email này."
+    const textSubject = "Chào bạn, tôi là "
     const email = "linhct020328@gmail.com"
 
-    const subject = encodeURIComponent(textSubject);
-    const body = encodeURIComponent(textBody);
+    const [contentSend, setContentSend] = useState<ContentSend>(initialContent);
+
+    const subject = encodeURIComponent(textSubject + contentSend.contentName);
+    const body = encodeURIComponent(contentSend.contentMessage);
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+
+    const mapApiKey = "AIzaSyDDXHYqJM3Tn_0bP1GcBEmA6IiKznvZQnI"
+    const mapCenter = { lat: 20.869430, lng: 105.896737 }
+
+    const marqueeContact = ["CONTACT ME 🤘🏻", "LINHCTT 🤘🏻"]
 
     const value = {
         name,
@@ -484,7 +558,11 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         skill: defaultSkills,
         project: defaultProject,
         contact: defaultContact,
-        gmailUrl
+        gmailUrl,
+        mapApiKey,
+        mapCenter,
+        contentSend, setContentSend,
+        marqueeContact
     }
 
     return (

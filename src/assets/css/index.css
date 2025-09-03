@@ -1,5 +1,6 @@
-html,:root :host{
-    font-family: "Mona-Sans-Regular",sans-serif;
+html,
+:root :host {
+    font-family: "Mona-Sans-Regular", sans-serif;
 }
 
 @property --_x {
@@ -62,4 +63,39 @@ figure figcaption {
 figure.alt figcaption {
     translate: calc(-.5lh + var(--r)) calc(.5lh - var(--r));
     /* translate: calc(-0.3lh + var(--r)) calc(-3.7lh - var(--r)); */
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    transform: translate(14px, 11px) scale(1);
+    color: white;
+}
+
+*.Mui-focused .MuiOutlinedInput-notchedOutline,
+*.Mui-focused .MuiPickersOutlinedInput-notchedOutline {
+    outline: none;
+    background: transparent !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgb(255, 255, 255, 0.1) !important
+}
+
+.MuiInputLabel-root.Mui-focused,
+.MuiInputLabel-shrink {
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    background-color: transparent !important;
+    font-family: inherit !important;
+    top: -1.5rem !important;
+    left: -14px !important;
+    transition: all 0.3s;
+    color: white !important;
+}
+
+.MuiInput-root::before {
+    border-bottom: 2px solid rgb(255, 255, 255, 0.2) !important
+}
+
+.MuiInput-root::after {
+    border-bottom: 2px solid var(--color-green-400) !important
 }

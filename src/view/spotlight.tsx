@@ -25,10 +25,10 @@ type SpotlightProps = {
   className?: string;
 };
 
-export default function Spotlight({
+const Spotlight: React.FC<SpotlightProps> = ({
   children,
-  className = "",
-}: SpotlightProps) {
+  className = ""
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMousePosition();
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -92,3 +92,5 @@ export default function Spotlight({
     </div>
   );
 }
+
+export default Spotlight
