@@ -18,8 +18,8 @@ const Projects: React.FC = () => {
     }, []);
 
     return (
-        <section ref={refs[project.id]} className="bg-black/60" >
-            <div className="w-[1350px] mx-auto items-center justify-between py-[50px]">
+        <section ref={refs[project.id]} className="bg-black/60 relative after:absolute after:h-px after:w-full after:bg-gradient-to-r after:from-white/0 after:via-green-200/50 after-to-white/0" >
+            <div className="w-[1350px] mx-auto items-center justify-between pt-[50px] pb-[70px]">
                 <div
                     className='grid gap-12 mx-auto max-w-3xl pb-12 text-center md:pb-20'
                     data-aos="fade-up"
@@ -40,19 +40,39 @@ const Projects: React.FC = () => {
                         <p>{project.desc}</p>
                     </div>
 
-                    <div
-                        className="mx-auto grid max-w-sm items-start gap-6 sm:max-w-none sm:grid-cols-2 lg:grid-cols-2"
-                    >
-                        {project.details.map((item, index) => (
-                            <Spotlight key={index} className="group h-full ">
+                </div>
+                <div className='grid grid-col-1 md:grid-cols-2 gap-6'>
+                    {project.details.map((item, index) => (
+                        <a key={index}
+                            data-aos="fade-up"
+                            data-aos-delay={`${(index + 1) * 200}`}
+                            className="group/card w-full relative h-full overflow-hidden rounded-[20px] bg-black p-px transition-opacity duration-300 ease-in-out border-[1px] border-white/10"
+                            href={`${item.link}`}
+                            title={`${item.link}`}
+                        >
+                            <div className="relative z-20 h-full overflow-hidden rounded-[20px] after:absolute after:inset-0 ">
+                                <span className="absolute text-white left-6 top-6 opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100">
+                                    {item.title}
+                                </span>
                                 <div
-                                    data-aos="fade-up"
-                                    data-aos-delay={`${(index + 1) * 200}`}
-                                    className={`h-full w-full flex flex-col justify-between gap-2 relative rounded-[20px] bg-white/10 p-[30px] backdrop-blur-[10px] transition-opacity border-[1px] border-white/10  relative h-full overflow-hidden before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-green-20/20 before:opacity-0 before:blur-3xl before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-64 after:w-64 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-green-500/50 after:opacity-0 after:blur-3xl after:transition-opacity after:duration-500 hover:after:opacity-20 group-hover:before:opacity-100`}
-                                ></div>
-                            </Spotlight>
-                        ))}
-                    </div>
+                                    className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-white text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100"
+                                    aria-hidden="true"
+                                >
+                                    {project.icon}
+                                </div>
+
+                                <img
+                                    className="inline-flex w-full h-auto transition duration-300 ease-in-out transform opacity-100 group-hover/card:opacity-35 group-hover/card:scale-105"
+                                    src={item.img}
+                                    alt={item.title}
+                                />
+
+                                <span className="absolute text-white left-6 bottom-6 right-6 opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100">
+                                    {item.desc}
+                                </span>
+                            </div>
+                        </a>
+                    ))}
                 </div>
             </div>
         </section>

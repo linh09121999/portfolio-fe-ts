@@ -33,10 +33,16 @@ import { SiFramework, SiAdobeillustrator } from "react-icons/si";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
-
+import { GrFormNextLink } from "react-icons/gr";
 
 import imgLinh1 from "../assets/img/linh1.png"
 import imgLinh2 from "../assets/img/linh2.png"
+
+import imgDTAReport from "../assets/img/imgProject/DTAReport/img1.png"
+import imgKLD from "../assets/img/imgProject/KLD/login.png"
+import imgCaNhan from "../assets/img/imgProject/LandingPage/img1.png"
+import imgScan from "../assets/img/imgProject/Scan/login.png"
+
 export interface Pages {
     id: string;
     title: string;
@@ -335,32 +341,32 @@ export interface DetailProjects {
 
 const defaultDetailProjects: DetailProjects[] = [
     {
-        img: "",
-        title: "Cơ sở dữ liệu thi hành kỷ luật Đảng",
+        img: imgKLD,
+        title: "Communist Party of Vietnam's Discipline Handling Database",
         desc: "",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        link: "https://ubkttw-qdkl.teca.vn/",
+    },
+    {
+        img: imgScan,
+        title: "Scan Records Management System",
+        desc: "b",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "",
     },
     {
-        img: "",
-        title: "Hệ thống quản lý hồ sơ Scan",
-        desc: "",
+        img: imgDTAReport,
+        title: "DTA Service Reconciliation Report",
+        desc: "b",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
-        link: "",
+        link: "https://dta.ai.vn/",
     },
     {
-        img: "",
-        title: "Báo cáo đối soát dịch vụ DTA",
-        desc: "",
-        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
-        link: "",
-    },
-    {
-        img: "",
-        title: "",
-        desc: "",
+        img: imgCaNhan,
+        title: "Several personal projects",
+        desc: "b",
         skills: [ "ReactJS", "Tailwind CSS", "Adobe Illustrator"],
-        link: "",
+        link: "https://fe-aidriven-7b312.web.app/home", //https://landingpagecsecurity-65f64.web.app/home
     }
 ]
 
@@ -379,7 +385,7 @@ const defaultProject: Project = {
     title: "MY PROJECTS",
     desc: "Contributed to developing the user interface for an internal management application, focusing on intuitive design and optimizing user workflows.",
     details: defaultDetailProjects,
-    icon: <></>
+    icon: <GrFormNextLink />
 }
 
 
@@ -446,11 +452,8 @@ export type LatLng = {
 
 export interface ContentSend {
     contentName: string;
-    // setContentName: (value: string) => void;
     contentEmail: string;
-    // setContentEmail: (value: string) => void;
     contentMessage: string;
-    // setContentMessage: (value: string) => void;
 }
 
 const initialContent: ContentSend = {
