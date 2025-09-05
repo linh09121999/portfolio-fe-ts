@@ -5,21 +5,26 @@ type socialMediaProps = {
     listLink: string;
     listIcon?: JSX.Element;
     listTitle?: string;
-    className?: string
+    className?: string;
+    classNameIcon?: string;
+    classNameTitle?: string;
 }
 
 const SocialMedia: React.FC<socialMediaProps> = ({
     indexProp = 0,
-    listIcon = <></>,
-    listLink = "",
-    listTitle = "",
-    className = ""
+    listIcon,
+    listLink,
+    listTitle,
+    className,
+    classNameIcon,
+    classNameTitle
 }) => {
     return (
         <li key={indexProp}>
             <a href={`${listLink}`}
                 className={className}>
-                {listIcon}{listTitle}
+                <div className={classNameIcon}>{listIcon}</div>
+                <div className={classNameTitle}>{listTitle}</div>
             </a>
         </li>
     )

@@ -3,9 +3,8 @@ import type { JSX, ReactNode } from "react";
 import { useMediaQuery } from "@mui/material"
 
 import {
-    FaFacebookSquare,
-    FaGithubSquare,
-    FaLinkedin,
+    FaFacebookF,
+    FaLinkedinIn,
     FaPlayCircle,
     FaHome,
     FaMailBulk,
@@ -27,13 +26,14 @@ import {
     IoSparkles,
     IoLayersSharp
 } from "react-icons/io5";
-import { MdLayers } from "react-icons/md";
+import { MdLayers, MdNavigateNext } from "react-icons/md";
 import { VscVscodeInsiders, VscVscode } from "react-icons/vsc";
 import { SiFramework, SiAdobeillustrator } from "react-icons/si";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
 import { GrFormNextLink } from "react-icons/gr";
+import { TbBrandGithubFilled } from "react-icons/tb";
 
 import imgLinh1 from "../assets/img/linh1.png"
 import imgLinh2 from "../assets/img/linh2.png"
@@ -88,17 +88,17 @@ const defaultSocialMediaContent: SocialMediaContent[] = [
     {
         title: "FaceBook",
         link: "https://www.facebook.com/ThuyLinh.09121999",
-        icon: <FaFacebookSquare className="size-[28px]" />
+        icon: <FaFacebookF />
     },
     {
         title: "GitHub",
         link: "https://github.com/linh09121999",
-        icon: <FaGithubSquare className="size-[28px]" />
+        icon: <TbBrandGithubFilled />
     },
     {
         title: "LinkedIn",
         link: "https://www.linkedin.com/in/thuylinh09121999/",
-        icon: <FaLinkedin className="size-[28px]" />
+        icon: <FaLinkedinIn />
     }
 ]
 
@@ -211,13 +211,15 @@ export interface Icons {
     iconClose: JSX.Element;
     iconBackToTop: JSX.Element;
     iconMap: JSX.Element;
+    iconNext: JSX.Element;
 }
 
 const defaultIcons: Icons = {
     iconMenu: <CgMenu />,
     iconClose: <IoClose />,
     iconBackToTop: <FaAngleDoubleUp />,
-    iconMap: <FaMapMarkerAlt size={30} />
+    iconMap: <FaMapMarkerAlt size={30} />,
+    iconNext: <MdNavigateNext size={24}/>
 }
 
 export interface DetailSkills {

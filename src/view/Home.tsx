@@ -61,7 +61,13 @@ const Home: React.FC = () => {
                 <p className='text-xl'>{socialMedia.title}</p>
                 <ul className='flex list-none gap-6'>
                     {socialMedia.socialMediaContent.map((social, index) => (
-                        <SocialMedia className='hover:text-green-400 hover:translate-x-[5px] text-white/70 transition-transform duration-300 ease-in-out' indexProp={index} listLink={social.link} listTitle={social.title} />
+                        <SocialMedia
+                            className='hover:text-green-400 hover:translate-x-[5px] text-white/70 transition-transform duration-300 ease-in-out'
+                            indexProp={index}
+                            listLink={social.link}
+                            listTitle={social.title}
+                            classNameTitle='css-icon'
+                        />
                     ))}
                 </ul>
             </div>

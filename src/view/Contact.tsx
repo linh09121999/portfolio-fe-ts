@@ -30,7 +30,8 @@ const Contacts: React.FC = () => {
 
 
     const sxButton: SxProps<Theme> = {
-        background: "rgba(74, 222, 128, 0.4)",
+        background: "rgba(74, 222, 128, 0.1)",
+        border: '1px solid rgba(74, 222, 128, 0.4)',
         color: 'white',
         borderRadius: '20px',
         height: '50px',
@@ -52,6 +53,7 @@ const Contacts: React.FC = () => {
             zIndex: -1,
         },
         "&:hover::before": {
+            border: 'none',
             left: 0,
             width: "100%",
             opacity: 1,
@@ -176,7 +178,7 @@ const Contacts: React.FC = () => {
                         <div className='text-2xl grid gap-4'>
                             {contact.contactIntro.map((item, index) => (
                                 <div key={index} className='flex gap-4 items-center '>
-                                    <span className='css-icon backdrop-blur-[4px] text-white bg-green-400/20 size-[55px] rounded-full justify-items-center content-center transition-all duration-500 ease hover:bg-green-400 hover:text-black'>{item.icon}</span>
+                                    <span className='css-icon backdrop-blur-[4px] text-white bg-green-400/10 size-[55px] rounded-full justify-items-center content-center transition-all duration-500 ease hover:bg-green-400 hover:text-black'>{item.icon}</span>
                                     <span className='text-white'>{item.desc}</span>
                                 </div>
                             ))}
