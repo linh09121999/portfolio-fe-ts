@@ -6,9 +6,9 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import Marquee from "react-fast-marquee";
 
-import Spotlight from "../components/spotlight";
+import Spotlight from "../../components/spotlight";
 
-import { useGlobal } from "../context/GlobalContext";
+import { useGlobal } from "../../context/GlobalContext";
 
 const Index: React.FC = () => {
 

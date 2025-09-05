@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useGlobal } from "../context/GlobalContext";
-import SocialMedia from '../components/SocialMedia';
+import { useGlobal } from "../../context/GlobalContext";
+import SocialMedia from '../../components/SocialMedia';
 
 import AOS from "aos";
 import "aos/dist/aos.css";

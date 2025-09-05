@@ -364,7 +364,7 @@ const defaultDetailProjects: DetailProjects[] = [
         title: "Scan Records Management System",
         desc: "b",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
-        link: "",
+        link: "! Bảo mật do website chưa công khai",
     },
     {
         img: imgDTAReport,

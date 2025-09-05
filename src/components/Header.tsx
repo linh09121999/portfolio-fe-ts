@@ -20,7 +20,7 @@ const Header: React.FC = () => {
 
     return (
         <header
-            className="fixed z-1000 w-full bg-black/20 backdrop-blur-[10px] py-[10px] px-[40px] border-b-[1px] border-white/10 "
+            className="fixed z-1000 w-full bg-black/40 backdrop-blur-[10px] py-[10px] px-[40px] border-b-[1px] border-white/10 "
             data-aos="fade-down"
             data-aos-delay="200"
         >

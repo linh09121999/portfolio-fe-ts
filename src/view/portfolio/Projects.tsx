@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useGlobal } from "../context/GlobalContext";
-import Spotlight from "../components/spotlight";
+import { useGlobal } from '../../context/GlobalContext';
+import Spotlight from "../../components/spotlight";
 
 import AOS from "aos";
 import "aos/dist/aos.css";

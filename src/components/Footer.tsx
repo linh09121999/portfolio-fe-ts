@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
                                     <SocialMedia
                                         className='text-xl size-2xl hover:text-green-400 css-icon transition-all duration-300 ease-in-out text-white/70 w-[40px] h-[40px] rounded-full bg-blue'
                                         indexProp={index} listLink={social.link} listIcon={social.icon}
-                                        classNameIcon='css-icon backdrop-blur-[4px] text-white bg-green-400/10 size-[40px] rounded-full justify-items-center content-center transition-all duration-500 ease hover:bg-green-400 hover:text-black'
+                                        classNameIcon='css-icon backdrop-blur-[4px] text-white bg-green-400/15 size-[40px] rounded-full justify-items-center content-center transition-all duration-500 ease hover:bg-green-400 hover:text-black'
                                     />
                                 ))}
                             </ul>

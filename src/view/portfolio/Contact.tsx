@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useGlobal } from "../context/GlobalContext";
-import MapGoogle from '../components/MapGoogle';
+import { useGlobal } from "../../context/GlobalContext";
+import MapGoogle from '../../components/MapGoogle';
 import { Button, TextField, Box } from '@mui/material';
 import type { SxProps, Theme } from "@mui/material/styles";
 import { keyframes } from "@mui/system";
-import type { ContentSend } from '../context/GlobalContext';
+import type { ContentSend } from '../../context/GlobalContext';
 import Marquee from "react-fast-marquee";
 
 import AOS from "aos";
@@ -31,7 +31,7 @@ const Contacts: React.FC = () => {
 
     const sxButton: SxProps<Theme> = {
         background: "rgba(74, 222, 128, 0.1)",
-        border: '1px solid rgba(74, 222, 128, 0.4)',
+        border: '1px solid rgba(74, 222, 128, 0.2)',
         color: 'white',
         borderRadius: '20px',
         height: '50px',
@@ -39,6 +39,7 @@ const Contacts: React.FC = () => {
         fontSize: 'var(--text-xl)',
         position: "relative",
         overflow: "hidden",
+        textTransform: "none",
         "&:active": { transform: "scale(0.95)" },
         "&::before": {
             content: '""',
@@ -178,7 +179,7 @@ const Contacts: React.FC = () => {
                         <div className='text-2xl grid gap-4'>
                             {contact.contactIntro.map((item, index) => (
                                 <div key={index} className='flex gap-4 items-center '>
-                                    <span className='css-icon backdrop-blur-[4px] text-white bg-green-400/10 size-[55px] rounded-full justify-items-center content-center transition-all duration-500 ease hover:bg-green-400 hover:text-black'>{item.icon}</span>
+                                    <span className='css-icon backdrop-blur-[4px] text-white bg-green-400/15 size-[55px] rounded-full justify-items-center content-center transition-all duration-500 ease hover:bg-green-400 hover:text-black'>{item.icon}</span>
                                     <span className='text-white'>{item.desc}</span>
                                 </div>
                             ))}
