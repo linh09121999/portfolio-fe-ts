@@ -5,7 +5,7 @@ import { useMediaQuery } from "@mui/material"
 import {
     FaFacebookF,
     FaLinkedinIn,
-    FaPlayCircle,
+    FaUser,
     FaHome,
     FaMailBulk,
     FaMapMarkerAlt,
@@ -19,14 +19,13 @@ import {
     FaCss3Alt,
     FaGitAlt
 } from "react-icons/fa";
+import { FaBriefcase, FaCodeBranch } from "react-icons/fa6";
 import { CgMenu } from "react-icons/cg";
 import {
-    IoShieldCheckmark,
     IoClose,
-    IoSparkles,
-    IoLayersSharp
+    IoSparkles
 } from "react-icons/io5";
-import { MdLayers, MdNavigateNext } from "react-icons/md";
+import { MdNavigateNext } from "react-icons/md";
 import { VscVscodeInsiders, VscVscode } from "react-icons/vsc";
 import { SiFramework, SiAdobeillustrator } from "react-icons/si";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
@@ -53,27 +52,27 @@ const defaultPages: Pages[] = [
     {
         id: "home",
         title: "HOME",
-        icon: <></>
+        icon: <FaHome />
     },
     {
         id: "about",
         title: "ABOUT",
-        icon: <></>
+        icon: <FaUser />
     },
     {
         id: "skills",
         title: "SKILLS",
-        icon: <></>
+        icon: <FaBriefcase />
     },
     {
         id: "projects",
         title: "PROJECTS",
-        icon: <></>
+        icon: <FaCodeBranch />
     },
     {
         id: "contact",
         title: "CONTACT",
-        icon: <></>
+        icon: <FaMailBulk />
     }
 
 ]
@@ -219,7 +218,7 @@ const defaultIcons: Icons = {
     iconClose: <IoClose />,
     iconBackToTop: <FaAngleDoubleUp />,
     iconMap: <FaMapMarkerAlt size={30} />,
-    iconNext: <MdNavigateNext size={24}/>
+    iconNext: <MdNavigateNext size={24} />
 }
 
 export interface DetailSkills {

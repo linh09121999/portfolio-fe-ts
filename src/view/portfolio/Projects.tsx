@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useGlobal } from '../../context/GlobalContext';
-import Spotlight from "../../components/spotlight";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -52,7 +51,7 @@ const Projects: React.FC = () => {
                         >
                             <div className="relative z-20 h-full overflow-hidden rounded-[20px] after:absolute after:inset-0 ">
                                 <div
-                                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  items-center justify-center rounded-[20px] text-center text-xl text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100"
+                                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 uppercase items-center justify-center rounded-[20px] text-center text-xl text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100"
                                     aria-hidden="true"
                                 >
                                     {item.title}

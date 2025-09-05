@@ -157,7 +157,7 @@ const Contacts: React.FC = () => {
             className="bg-black/60 h-[calc(100%+30px)]"
         >
             <div className='w-[1350px] mx-auto items-center grid grid-col-1 gap-12 pt-[50px] mb-[80px]'>
-                <div className='grid grid-col-1 gap-20 grid-cols-2'>
+                <div className='grid grid-col-1 gap-20 md:grid-cols-2'>
                     <div
                         className='grid grid-col-1 gap-12 place-self-start'
                         data-aos="fade-right"

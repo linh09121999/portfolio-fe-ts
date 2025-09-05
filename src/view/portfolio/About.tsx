@@ -59,7 +59,7 @@ const About: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <Spotlight className='group grid grid-col-1 md:grid-cols-4 gap-6 ml-[50px] mr-[10px] '
+                <Spotlight className='group grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ml-[50px] mr-[10px]'
                     data-aos="fade-up"
                     data-aos-delay="400"
                 >
