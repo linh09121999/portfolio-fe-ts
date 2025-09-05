@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Nav from "./Nav";
-import SocialMedia from "./SocialMedia"
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -26,9 +25,9 @@ const Header: React.FC = () => {
             data-aos-delay="200"
         >
             <div className='w-[1350px] mx-auto flex justify-between items-center'>
-                <p className='text-[34px] font-bold text-green-200'>{name}</p>
+                <p className='text-[34px] font-bold text-green-400'>{name}</p>
                 <Nav />
-                <SocialMedia />
+                
             </div>
 
         </header>

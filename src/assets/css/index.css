@@ -60,6 +60,10 @@ figure figcaption {
     letter-spacing: 1px;
 }
 
+figure:hover figcaption{
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
 figure.alt figcaption {
     translate: calc(-.5lh + var(--r)) calc(.5lh - var(--r));
     /* translate: calc(-0.3lh + var(--r)) calc(-3.7lh - var(--r)); */
@@ -67,9 +71,9 @@ figure.alt figcaption {
 
 .contact-form label {
     display: block;
-    font-weight: 600;
     transform: translate(14px, 11px) scale(1);
-    color: white;
+    color: rgb(255, 255, 255, 0.7);
+    font-size: var(--text-xl)
 }
 
 *.Mui-focused .MuiOutlinedInput-notchedOutline,
@@ -83,10 +87,10 @@ figure.alt figcaption {
 .MuiInputLabel-root.Mui-focused,
 .MuiInputLabel-shrink {
     font-weight: 600 !important;
-    font-size: 1rem !important;
+    font-size: var(--text-xl) !important;
     background-color: transparent !important;
     font-family: inherit !important;
-    top: -1.5rem !important;
+    top: -2rem !important;
     left: -14px !important;
     transition: all 0.3s;
     color: white !important;
@@ -99,3 +103,9 @@ figure.alt figcaption {
 .MuiInput-root::after {
     border-bottom: 2px solid var(--color-green-400) !important
 }
+
+.css-icon:hover {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes fly-1 { from { transform: translateY(0.1em); } to { transform: translateY(-0.1em); } }

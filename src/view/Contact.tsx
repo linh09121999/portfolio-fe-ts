@@ -3,15 +3,21 @@ import { useGlobal } from "../context/GlobalContext";
 import MapGoogle from '../components/MapGoogle';
 import { Button, TextField, Box } from '@mui/material';
 import type { SxProps, Theme } from "@mui/material/styles";
+import { keyframes } from "@mui/system";
 import type { ContentSend } from '../context/GlobalContext';
 import Marquee from "react-fast-marquee";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const fly1 = keyframes`
+  from { transform: translateY(0.1em); }
+  to   { transform: translateY(-0.1em); }
+`;
+
 
 const Contacts: React.FC = () => {
-    const { contact, refs, gmailUrl, mapApiKey, icons, mapCenter, contentSend, setContentSend, marqueeContact } = useGlobal();
+    const { contact, refs, gmailUrl, mapApiKey, icons, mapCenter, setContentSend, marqueeContact } = useGlobal();
 
     useEffect(() => {
         AOS.init({
@@ -22,16 +28,17 @@ const Contacts: React.FC = () => {
 
     }, []);
 
+
     const sxButton: SxProps<Theme> = {
-        background: "linear-gradient(135deg, var(--color-green-100) 0%, var(--color-green-300) 100%); ",
-        // border: '1px solid rgb(255,255,255,0.1)',
-        color: 'black',
+        background: "rgba(74, 222, 128, 0.4)",
+        color: 'white',
         borderRadius: '20px',
         height: '50px',
         fontWeight: '600',
         fontSize: 'var(--text-xl)',
         position: "relative",
         overflow: "hidden",
+        "&:active": { transform: "scale(0.95)" },
         "&::before": {
             content: '""',
             position: "absolute",
@@ -39,7 +46,7 @@ const Contacts: React.FC = () => {
             left: "50%",
             height: "100%",
             width: 0,
-            background: "linear-gradient(135deg, var(--color-green-300) 0%, var(--color-green-400) 100%); ",
+            background: "var(--color-green-400)",
             opacity: 0,
             transition: "all 0.5s ease",
             zIndex: -1,
@@ -48,6 +55,24 @@ const Contacts: React.FC = () => {
             left: 0,
             width: "100%",
             opacity: 1,
+        },
+        "& span": {
+            display: 'block',
+            transition: 'all 0.3s ease-in-out'
+        },
+        "& svg": {
+            display: 'block',
+            transformOrigin: 'center center',
+            transition: 'transform 0.3s ease-in-out',
+        },
+        ":hover svg": {
+            transform: ' rotate(45deg) scale(1.1)',
+            transition: 'translateX(5rem) transform 0.3s ease-in-out',
+
+        },
+        "&:hover .svgWrapper": {
+            animation: `${fly1} 0.6s ease-in-out infinite alternate`,
+            color: 'black'
         },
     }
 
@@ -63,7 +88,6 @@ const Contacts: React.FC = () => {
             fontSize: 'var(--text-xl)',
             // border: 'none',
         },
-
         '&:hover .MuiOutlinedInput-notchedOutline': {
             outline: 'none',
             background: 'rgba(255, 255, 255, 0.1)',
@@ -79,6 +103,7 @@ const Contacts: React.FC = () => {
         '& .MuiInputBase-input': {
             color: 'white',
             paddingLeft: '14px',
+            fontSize: 'var(--text-xl)',
         }
     }
 
@@ -107,6 +132,7 @@ const Contacts: React.FC = () => {
         '& .MuiInputBase-input': {
             color: 'white',
             paddingLeft: '14px',
+            fontSize: 'var(--text-xl)',
         }
     }
 
@@ -149,8 +175,8 @@ const Contacts: React.FC = () => {
                         </div>
                         <div className='text-2xl grid gap-4'>
                             {contact.contactIntro.map((item, index) => (
-                                <div key={index} className='flex gap-4 items-center'>
-                                    <span className='text-white bg-green-400/20 size-[55px] rounded-full justify-items-center content-center'>{item.icon}</span>
+                                <div key={index} className='flex gap-4 items-center '>
+                                    <span className='css-icon backdrop-blur-[4px] text-white bg-green-400/20 size-[55px] rounded-full justify-items-center content-center transition-all duration-500 ease hover:bg-green-400 hover:text-black'>{item.icon}</span>
                                     <span className='text-white'>{item.desc}</span>
                                 </div>
                             ))}
@@ -191,18 +217,27 @@ const Contacts: React.FC = () => {
                                 onChange={handleChange}
                             />
 
-                            <Button className=" w-full group place-self-end flex group z-1000 relative inline-flex gap-2"
+                            <Button className=" w-full group backdrop-blur-[4px] place-self-end flex z-10  inline-flex gap-2 shadow-md transition-transform duration-300 ease-in-out"
                                 href={gmailUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 sx={sxButton}
                             >
-                                {contact.btnContact}
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    className="w-4 h-4 stroke-black stroke-2 fill-none transition-transform duration-300 group-hover:translate-x-1">
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <polyline points="12 5 19 12 12 19" />
-                                </svg>
+                                <div className="relative flex items-center gap-2 svgWrapper">
+                                    <span className='text-xl'>{contact.btnContact}</span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        width="24"
+                                        height="24"
+                                    >
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            fill="currentColor"
+                                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                        ></path>
+                                    </svg>
+                                </div>
                             </Button>
                         </form>
                     </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useGlobal } from "../context/GlobalContext";
-import { CircularProgress, Typography, Box } from '@mui/material';
+import { CircularProgress, Box } from '@mui/material';
 
 const BackToTop: React.FC = () => {
     const { icons } = useGlobal()
@@ -40,7 +40,7 @@ const BackToTop: React.FC = () => {
             {isVisible && (
                 <button
                     onClick={scrollToTop}
-                    className="shadow-lg transition-all duration-300 fixed bottom-[24px] right-[30px] text-white rounded-full flex items-center justify-center z-10 hover:translate-y-[-3px]"
+                    className="shadow-lg transition-all duration-300 fixed bottom-[24px] right-[30px] text-white rounded-full flex items-center justify-center z-10 css-icon"
 
                 >
                     <CircularProgress variant="determinate" value={scrollPercent} size="50px" sx={{ color: "var(--color-green-200)" }} />

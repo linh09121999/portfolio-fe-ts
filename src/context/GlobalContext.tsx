@@ -78,13 +78,13 @@ const defaultPages: Pages[] = [
 
 ]
 
-export interface SocialMedia {
+export interface SocialMediaContent {
     title: string;
     link: string;
     icon: JSX.Element;
 }
 
-const defaultSocialMedia: SocialMedia[] = [
+const defaultSocialMediaContent: SocialMediaContent[] = [
     {
         title: "FaceBook",
         link: "https://www.facebook.com/ThuyLinh.09121999",
@@ -101,6 +101,16 @@ const defaultSocialMedia: SocialMedia[] = [
         icon: <FaLinkedin className="size-[28px]" />
     }
 ]
+
+export interface SocialMedia {
+    title: string;
+    socialMediaContent: SocialMediaContent[]
+}
+
+const defaultSocialMedia: SocialMedia = {
+    title: "SOCIAL MEDIA",
+    socialMediaContent: defaultSocialMediaContent
+}
 
 export interface Home {
     id: string;
@@ -365,7 +375,7 @@ const defaultDetailProjects: DetailProjects[] = [
         img: imgCaNhan,
         title: "Several personal projects",
         desc: "b",
-        skills: [ "ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "https://fe-aidriven-7b312.web.app/home", //https://landingpagecsecurity-65f64.web.app/home
     }
 ]
@@ -462,8 +472,19 @@ const initialContent: ContentSend = {
     contentMessage: ''
 };
 
+export interface Footer {
+    footerText: string;
+    yearFull: number;
+}
+
+const defaultFooter: Footer = {
+    footerText: "All rights reserved",
+    yearFull: new Date().getFullYear()
+}
+
 export interface GlobalState {
     name: string | null;
+    fullname: string | null;
     setSelectNav: (index: number) => void;
     selectNav: number;
     refs: Record<string, React.RefObject<HTMLDivElement | null>>;
@@ -472,7 +493,7 @@ export interface GlobalState {
     isMobile: boolean;
     icons: Icons;
     pages: Pages[];
-    socialMedia: SocialMedia[];
+    socialMedia: SocialMedia;
     home: Home;
     welcomeText: string;
     marqueeContact: string[];
@@ -485,6 +506,7 @@ export interface GlobalState {
     mapCenter: LatLng;
     contentSend: ContentSend;
     setContentSend: React.Dispatch<React.SetStateAction<ContentSend>>;
+    footerContent: Footer
 }
 
 
@@ -492,6 +514,7 @@ const GlobalContext = createContext<GlobalState | undefined>(undefined);
 
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     const name = "Linhcct"
+    const fullname = "Cao Thi Thuy Linh"
     const welcomeText = "Welcome to my portfolio 👋"
 
     const refs: Record<string, React.RefObject<HTMLDivElement | null>> = {};
@@ -556,6 +579,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
 
     const value = {
         name,
+        fullname,
         pages: defaultPages,
         socialMedia: defaultSocialMedia,
         selectNav, setSelectNav,
@@ -574,7 +598,8 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         mapApiKey,
         mapCenter,
         contentSend, setContentSend,
-        marqueeContact
+        marqueeContact,
+        footerContent: defaultFooter
     }
 
     return (

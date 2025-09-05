@@ -1,20 +1,27 @@
-import React from 'react';
-import { useGlobal } from '../context/GlobalContext';
+import React, { type JSX } from 'react';
 
-const SocialMedia: React.FC = () => {
-    const { socialMedia } = useGlobal();
+type socialMediaProps = {
+    indexProp: number;
+    listLink: string;
+    listIcon?: JSX.Element;
+    listTitle?: string;
+    className?: string
+}
+
+const SocialMedia: React.FC<socialMediaProps> = ({
+    indexProp = 0,
+    listIcon = <></>,
+    listLink = "",
+    listTitle = "",
+    className = ""
+}) => {
     return (
-        <ul className='flex list-none gap-2'>
-            {socialMedia.map((social, index) => (
-                <li key={index}>
-                    <a href={`${social.link}`}
-                    className='hover:text-white text-green-200'>
-                        {social.icon}
-                    </a>
-                </li>
-            ))}
-
-        </ul>
+        <li key={indexProp}>
+            <a href={`${listLink}`}
+                className={className}>
+                {listIcon}{listTitle}
+            </a>
+        </li>
     )
 }
 

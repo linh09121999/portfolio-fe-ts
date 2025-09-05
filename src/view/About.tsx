@@ -20,7 +20,7 @@ const About: React.FC = () => {
     return (
         <section
             ref={refs[about.id]}
-            className="bg-black/60"
+            className="bg-black/60 "
         >
             <div className='w-[1350px] mx-auto items-center grid grid-col-1 gap-16 py-[50px]'>
                 <div className='items-center flex justify-between gap-20'>

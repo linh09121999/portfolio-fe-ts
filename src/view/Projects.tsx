@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
     }, []);
 
     return (
-        <section ref={refs[project.id]} className="bg-black/60 relative after:absolute after:h-px after:w-full after:bg-gradient-to-r after:from-white/0 after:via-green-200/50 after-to-white/0" >
+        <section ref={refs[project.id]} className="bg-black/60 relative after:absolute after:h-px after:w-full after:bg-gradient-to-r after:from-white/0 after:via-green-200/50 after:to-white/0" >
             <div className="w-[1350px] mx-auto items-center justify-between pt-[50px] pb-[70px]">
                 <div
                     className='grid gap-12 mx-auto max-w-3xl pb-12 text-center md:pb-20'
@@ -51,14 +51,11 @@ const Projects: React.FC = () => {
                             title={`${item.link}`}
                         >
                             <div className="relative z-20 h-full overflow-hidden rounded-[20px] after:absolute after:inset-0 ">
-                                <span className="absolute text-white left-6 top-6 opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100">
-                                    {item.title}
-                                </span>
                                 <div
-                                    className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-white text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100"
+                                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  items-center justify-center rounded-[20px] text-center text-xl text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100"
                                     aria-hidden="true"
                                 >
-                                    {project.icon}
+                                    {item.title}
                                 </div>
 
                                 <img
@@ -66,10 +63,6 @@ const Projects: React.FC = () => {
                                     src={item.img}
                                     alt={item.title}
                                 />
-
-                                <span className="absolute text-white left-6 bottom-6 right-6 opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100">
-                                    {item.desc}
-                                </span>
                             </div>
                         </a>
                     ))}
