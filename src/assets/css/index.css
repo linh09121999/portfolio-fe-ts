@@ -109,3 +109,16 @@ figure.alt figcaption {
 }
 
 @keyframes fly-1 { from { transform: translateY(0.1em); } to { transform: translateY(-0.1em); } }
+
+.section-letter {
+  animation: animate 17.5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

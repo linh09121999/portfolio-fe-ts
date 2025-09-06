@@ -20,12 +20,12 @@ const About: React.FC = () => {
     return (
         <section
             ref={refs[about.id]}
-            className="bg-black/60 "
+            className="bg-black/60 relative after:absolute after:h-px after:bottom-[-12px] after:w-full after:bg-gradient-to-r after:from-white/0 after:via-green-200/50 after:to-white/0"
         >
-            <div className='w-[1350px] mx-auto items-center grid grid-col-1 gap-16 py-[50px]'>
+            <div className='max-w-[1350px] mx-auto items-center grid grid-col-1 gap-16 py-[50px] max-[1350px]:px-4'>
                 <div className='items-center flex justify-between gap-20'>
                     <img src={`${about.img}`} alt={`${about.altImg}`}
-                        className="md:w-[32%]"
+                        className="w-[32%] max-md:hidden"
                         data-aos="fade-right"
                         data-aos-delay="300"
                     />
@@ -49,7 +49,7 @@ const About: React.FC = () => {
                         <div className='text-white/70 text-xl'>
                             <p>{about.desc}</p>
                         </div>
-                        <div className='text-2xl grid gap-4'>
+                        <div className='text-2xl grid gap-4 max-md:text-xl'>
                             {about.intro.map((item, index) => (
                                 <div key={index} className='flex'>
                                     <span className='text-green-200 w-[170px]'>{item.title}: </span>
@@ -59,10 +59,7 @@ const About: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <Spotlight className='group grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ml-[50px] mr-[10px]'
-                    data-aos="fade-up"
-                    data-aos-delay="400"
-                >
+                <Spotlight className='group grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-6 '>
                     {about.strengths.map((strength, index) => (
                         <figure className="alt " key={index}
                             data-aos="fade-up"
@@ -71,8 +68,8 @@ const About: React.FC = () => {
                             <figcaption className='bg-green-400 size-[60px] content-center text-center'>
                                 <span className='text-3xl '>{strength.icon}</span>
                             </figcaption>
-                            <div className='textStrength bg-white/10 backdrop-blur-[10px] text-white/65  border-[1px] border-white/10 relative h-full overflow-hidden before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-green-20/20 before:opacity-0 before:blur-3xl before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-64 after:w-64 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-green-500/50 after:opacity-0 after:blur-3xl after:transition-opacity after:duration-500 hover:after:opacity-20 group-hover:before:opacity-100'>
-                                <p className='text-2xl p-[20px] pl-[30px] pb-[90px]'>
+                            <div className='textStrength w-full bg-green-100/10 backdrop-blur-[10px] text-white/65 border-[1px] border-green-100/10 relative h-full overflow-hidden before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-green-20/20 before:opacity-0 before:blur-3xl before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-64 after:w-64 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-green-500/50 after:opacity-0 after:blur-3xl after:transition-opacity after:duration-500 hover:after:opacity-20 group-hover:before:opacity-100'>
+                                <p className='text-2xl p-[20px] pl-[30px] pb-[90px] max-lg:pl-[50px] max-md:text-xl'>
                                     {strength.desc}
                                 </p>
                             </div>

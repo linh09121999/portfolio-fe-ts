@@ -21,7 +21,7 @@ const Skills: React.FC = () => {
 
     return (
         <section ref={refs[skill.id]} className="bg-black/60" >
-            <div className="w-[1350px] mx-auto items-center justify-between pt-[50px] pb-[70px]">
+            <div className="max-w-[1350px] mx-auto items-center justify-between pt-[50px] pb-[70px] max-[1350px]:px-4">
                 <div
                     className='grid gap-12 mx-auto max-w-3xl pb-12 text-center md:pb-20'
                     data-aos="fade-up"
@@ -69,13 +69,13 @@ const Skills: React.FC = () => {
                     <div
                         data-aos="fade-up"
                         data-aos-delay="300"
-                        className="mx-auto grid max-w-sm items-start gap-6 sm:max-w-none sm:grid-cols-2 lg:grid-cols-3"
+                        className="grid w-full items-start gap-6 sm:max-w-none sm:grid-cols-2 lg:grid-cols-3"
                     >
                         {skill.details.map((detail, id2) => (
                             <Spotlight key={id2} className="group h-full ">
                                 <article
 
-                                    className={`h-full flex flex-col justify-between gap-2 relative rounded-[20px] bg-white/10 p-[30px] backdrop-blur-[10px] transition-opacity border-[1px] border-white/10  ${!detail.categories.includes(category) ? "opacity-30" : "relative h-full overflow-hidden before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-green-20/20 before:opacity-0 before:blur-3xl before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-64 after:w-64 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-green-500/50 after:opacity-0 after:blur-3xl after:transition-opacity after:duration-500 hover:after:opacity-20 group-hover:before:opacity-100"}`}
+                                    className={`h-full flex flex-col justify-between gap-2 relative rounded-[20px] bg-green-100/10 p-[30px] backdrop-blur-[10px] transition-opacity border-[1px] border-green-100/10  ${!detail.categories.includes(category) ? "opacity-30" : "relative h-full overflow-hidden before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-green-20/20 before:opacity-0 before:blur-3xl before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-64 after:w-64 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-green-500/50 after:opacity-0 after:blur-3xl after:transition-opacity after:duration-500 hover:after:opacity-20 group-hover:before:opacity-100"}`}
                                 >
                                     <div className="text-green-400 text-4xl mb-4">
                                         {detail.icon}

@@ -154,10 +154,10 @@ const Contacts: React.FC = () => {
     return (
         <section
             ref={refs[contact.id]}
-            className="bg-black/60 h-[calc(100%+30px)]"
+            className="bg-black/60 "
         >
-            <div className='w-[1350px] mx-auto items-center grid grid-col-1 gap-12 pt-[50px] mb-[80px]'>
-                <div className='grid grid-col-1 gap-20 md:grid-cols-2'>
+            <div className='max-w-[1350px] mx-auto items-center grid grid-col-1 gap-12 pt-[50px] mb-[50px] max-[1350px]:px-4'>
+                <div className='grid grid-col-1 gap-20 md:grid-cols-2 max-md:gap-16'>
                     <div
                         className='grid grid-col-1 gap-12 place-self-start'
                         data-aos="fade-right"
@@ -186,7 +186,7 @@ const Contacts: React.FC = () => {
                         </div>
                     </div>
                     <div
-                        className='contact-form mt-[50px]'
+                        className='contact-form mt-[50px] max-md:mt-0'
                         data-aos="fade-left"
                         data-aos-delay="300"
                     >
@@ -253,7 +253,7 @@ const Contacts: React.FC = () => {
                     <MapGoogle apiKey={mapApiKey} address={contact.localMap} iconMap={icons.iconMap} centerMap={mapCenter} />
                 </div>
             </div>
-            <Marquee speed={100} gradient={false} autoFill className="bg-white/10 backdrop-blur-[10px] py-[10px] px-[40px] border-[1px] border-white/10 border-r-0 border-l-0">
+            <Marquee speed={100} gradient={false} autoFill className="bg-green-400/10 backdrop-blur-[10px] py-[10px] px-[40px] border-[1px] border-green-400/10 border-r-0 border-l-0">
                 {marqueeContact.map((text) => (
                     <p className="flex text-white/70 text-7xl mx-[70px]">{text}</p>
                 ))}

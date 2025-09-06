@@ -119,6 +119,7 @@ export interface Home {
     btnContact: string;
     altImg: string;
     img: string;
+    textLearnMore: string
 }
 
 const defaultHome: Home = {
@@ -129,6 +130,7 @@ const defaultHome: Home = {
     btnContact: "Contact Me",
     altImg: "image linh 1",
     img: imgLinh1,
+    textLearnMore: "LEARN MORE • LEARN MORE •"
 }
 
 export interface Strengths {

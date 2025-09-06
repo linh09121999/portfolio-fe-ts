@@ -21,8 +21,9 @@ import { useGlobal } from '../context/GlobalContext';
 const Header: React.FC = () => {
     const sxPaperPropsDrawer: SxProps<Theme> = {
         sx: {
-            background: 'color-mix(in oklab, var(--color-black) 80%, transparent)',
+            background: 'color-mix(in oklab, var(--color-black) 20%, transparent)',
             color: 'var(--color-gray-200)',
+            backdropFilter: 'blur(10px)'
         }
     }
 
@@ -50,7 +51,8 @@ const Header: React.FC = () => {
         padding: '12px 24px',
         cursor: 'pointer',
         '&:hover': {
-            backgroundColor: 'rgba(255, 255, 255, 0.08)'
+            backgroundColor: 'rgba(255, 255, 255, 0.08)',
+            color: "var(--color-green-400)"
         },
         '& .MuiListItemIcon-root': {
             color: 'inherit',
@@ -87,7 +89,7 @@ const Header: React.FC = () => {
 
     return (
         <header
-            className="fixed z-1000 w-full bg-black/40 backdrop-blur-[10px] py-[10px] px-[40px] border-b-[1px] border-white/10 "
+            className="fixed z-1000 w-full bg-black/40 backdrop-blur-[10px] py-[15px] px-[40px] border-b-[1px] border-white/10 "
             data-aos="fade-down"
             data-aos-delay="200"
         >
@@ -102,7 +104,7 @@ const Header: React.FC = () => {
                                 {icons.iconMenu}
                             </button>
                             <Drawer
-                                anchor="left"
+                                anchor="right"
                                 open={open}
                                 onClose={toggleDrawer(false)}
                                 PaperProps={sxPaperPropsDrawer}

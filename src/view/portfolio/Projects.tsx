@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
 
     return (
         <section ref={refs[project.id]} className="bg-black/60 relative after:absolute after:h-px after:w-full after:bg-gradient-to-r after:from-white/0 after:via-green-200/50 after:to-white/0" >
-            <div className="w-[1350px] mx-auto items-center justify-between pt-[50px] pb-[70px]">
+            <div className="max-w-[1350px] mx-auto items-center justify-between pt-[50px] pb-[70px] max-[1350px]:px-4">
                 <div
                     className='grid gap-12 mx-auto max-w-3xl pb-12 text-center md:pb-20'
                     data-aos="fade-up"
