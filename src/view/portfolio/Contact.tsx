@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useGlobal } from "../../context/GlobalContext";
 import MapGoogle from '../../components/MapGoogle';
-import { Button, TextField, Box } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import type { SxProps, Theme } from "@mui/material/styles";
 import { keyframes } from "@mui/system";
 import type { ContentSend } from '../../context/GlobalContext';
