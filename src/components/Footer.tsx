@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import SocialMedia from "./SocialMedia"
 import Nav from './Nav';
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Footer: React.FC = () => {
     const { footerContent, fullname, socialMedia, home, icons } = useGlobal()
+
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,
+            once: false,
+            mirror: true,
+        });
+
+    }, []);
+
     return (
         <footer className='bg-black/60'>
             <div className='max-w-[1350px] mx-auto mt-[30px] pb-[20px] max-[1350px]:px-4'>
@@ -24,12 +37,14 @@ const Footer: React.FC = () => {
                             </ul>
                         </div>
                         <Nav
+                            data-aos="fade-left"
                             iconNext={icons.iconNext}
                             classNameUl='grid gap-4 md:justify-end grid-col-1 max-md:grid-cols-2 max-md:ml-[20px]'
                             classNameTitle='flex gap-3 items-center transiton-all duration-300 transform hover:translate-x-2'
                             classNameA='size-[24px] cursor-pointer transiton-all duration-300 hover:text-green-400 '
                             classNameAActive="text-white"
                         />
+
                     </div>
                 </div>
                 <div className="text-center w-full text-xl text-white/70">

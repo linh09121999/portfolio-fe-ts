@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
                 <div className='grid grid-col-1 md:grid-cols-2 gap-6'>
                     {project.details.map((item, index) => (
                         <a key={index}
-                            data-aos="fade-up"
+                            data-aos="zoom-in-up"
                             data-aos-delay={`${(index + 1) * 200}`}
                             className="group/card w-full relative h-full overflow-hidden rounded-[20px] bg-black p-px transition-opacity duration-300 ease-in-out border-[1px] border-white/10"
                             href={`${item.link}`}

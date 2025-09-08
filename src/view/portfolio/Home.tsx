@@ -29,7 +29,7 @@ const Home: React.FC = () => {
         >
             <div
                 className="grid h-full gap-10 w-[45%] self-start mt-[30px] z-100 max-md:mb-[250px] max-md:mt-0"
-                data-aos="fade-right"
+                data-aos="fade-up-right"
                 data-aos-delay="200"
             >
                 <p className="text-white text-2xl">{home.textHello}</p>
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
                 </button>
             </div>
             <div
-                data-aos="fade-left"
+                data-aos="fade-up-left"
                 data-aos-delay="200">
                 <img
                     alt={`${home.altImg}`}
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className='absolute text-white bottom-[50px] z-10 left-0 grid gap-6 max-[1350px]:left-4'
-                data-aos="fade-right"
+                data-aos="fade-up-right"
                 data-aos-delay="600">
                 <p className='text-xl'>{socialMedia.title}</p>
                 <ul className='flex list-none gap-6'>

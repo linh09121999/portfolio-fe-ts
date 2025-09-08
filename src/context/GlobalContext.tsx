@@ -316,7 +316,7 @@ const defaultTabsSkills: TabsSkills[] = [
     },
     {
         icon: <SiFramework size={18} />,
-        title: "Frameworks",
+        title: "Frameworks & Libraries",
         categories: 3
     },
     {
