@@ -68,4 +68,4 @@ export default tseslint.config([
 ])
 ```
 
-DEMO: POhttps://portfolio-caothithuylinh.web.app/home
+DEMO: https://portfolio-caothithuylinh.web.app/home
