@@ -23,7 +23,7 @@ const Index: React.FC = () => {
                 </Marquee>
                 <About />
                 <Skills />
-                <div className="h-[100vh] bg-fixed bg-center bg-cover bg-[url(./assets/img/img-cv.png)]">
+                <div className="h-screen bg-fixed bg-center bg-cover bg-[url(./assets/img/img-cv.png)] max-sm:hidden">
                 </div>
                 <Projects />
                 <Contacts />

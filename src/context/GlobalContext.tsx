@@ -87,17 +87,17 @@ const defaultSocialMediaContent: SocialMediaContent[] = [
     {
         title: "FaceBook",
         link: "https://www.facebook.com/ThuyLinh.09121999",
-        icon: <FaFacebookF />
+        icon: <FaFacebookF className="mx-auto" />
     },
     {
         title: "GitHub",
         link: "https://github.com/linh09121999",
-        icon: <TbBrandGithubFilled />
+        icon: <TbBrandGithubFilled className="mx-auto" />
     },
     {
         title: "LinkedIn",
         link: "https://www.linkedin.com/in/thuylinh09121999/",
-        icon: <FaLinkedinIn />
+        icon: <FaLinkedinIn className="mx-auto" />
     }
 ]
 
@@ -408,17 +408,17 @@ export interface contactIntro extends Intro {
 
 const defaultContactIntro: contactIntro[] = [
     {
-        icon: <FaMailBulk />,
+        icon: <FaMailBulk className="mx-auto" />,
         title: "Email",
         desc: "Linhct020328@gmail.com",
     },
     {
-        icon: <FaPhoneAlt />,
+        icon: <FaPhoneAlt className="mx-auto" />,
         title: "Phone",
         desc: "(+84) 962 059 262",
     },
     {
-        icon: <FaMapMarkerAlt />,
+        icon: <FaMapMarkerAlt className="mx-auto" />,
         title: "Address",
         desc: "No Ban Village, Hong Van Commune, Hanoi",
     }

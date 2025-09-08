@@ -33,9 +33,9 @@ const Home: React.FC = () => {
                 data-aos-delay="200"
             >
                 <p className="text-white text-2xl">{home.textHello}</p>
-                <p className="bg-gradient-to-r from-white to-green-600 bg-clip-text text-transparent text-9xl font-bold max-[1350px]:text-8xl max-md:text-7xl">{home.title}</p>
+                <p className="bg-gradient-to-r from-white to-green-600 bg-clip-text text-transparent text-9xl font-bold max-[1350px]:text-8xl max-md:text-7xl max-sm:text-6xl">{home.title}</p>
                 {/* <p className="text-white/50 text-xl">{home.slogan}</p> */}
-                <button className='md:hidden mt-[30px] mb-[80px] justify-self-end max-sm:justify-self-center group css-icon' onClick={handleClickContact}>
+                <button className='md:hidden mb-[50px] justify-self-end max-sm:justify-self-center group css-icon' onClick={handleClickContact}>
                     <div className='absolute section-letter size-[180px] max-sm:size-[140px] rounded-full bg-green-400/10 text-white backdrop-blur-[10px] border border-green-400/30 flex items-center justify-center overflow-hidden group-hover:text-black group-hover:font-bold'>
                         {Letter.map((item, index) => {
                             return (

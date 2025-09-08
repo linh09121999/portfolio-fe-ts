@@ -164,22 +164,22 @@ const Contacts: React.FC = () => {
                         data-aos-delay="300"
                     >
                         <div>
-                            <div className='inline-flex justify-center items-center gap-3 pb-3 before:h-[2px] before:w-10 before:bg-linear-to-r before:from-transparent before:to-green-200/50 after:h-[2px] after:w-10 after:bg-linear-to-l after:from-transparent after:to-green-200/50'>
+                            <div className='inline-flex justify-center items-center gap-3 pb-3 before:h-[2px] before:w-10 before:bg-linear-to-r before:from-transparent before:to-green-200/50 after:h-[2px] after:w-10 after:bg-linear-to-l after:from-transparent after:to-green-200/50 max-sm:w-full'>
                                 <span className=' inline-flex bg-linear-to-r from-green-200 to-white bg-clip-text text-transparent'>
                                     {contact.title}
                                 </span>
                             </div>
-                            <div className='text-white/70 text-5xl'>
+                            <div className='text-white/70 text-5xl max-sm:text-center'>
                                 <p>{contact.slogan}</p>
                             </div>
                         </div>
-                        <div className='text-white/70 text-xl'>
+                        <div className='text-white/70 text-xl max-sm:text-center'>
                             <p>{contact.desc}</p>
                         </div>
                         <div className='text-2xl grid gap-4'>
                             {contact.contactIntro.map((item, index) => (
                                 <div key={index} className='flex gap-4 items-center '>
-                                    <span className='css-icon backdrop-blur-[4px] text-white bg-green-400/15 size-[55px] rounded-full justify-items-center content-center transition-all duration-500 ease hover:bg-green-400 hover:text-black'>{item.icon}</span>
+                                    <span className='css-icon backdrop-blur-[4px] text-white bg-green-400/15 min-h-[55px] min-w-[55px] rounded-full justify-items-center content-center transition-all duration-500 ease hover:bg-green-400 hover:text-black'>{item.icon}</span>
                                     <span className='text-white'>{item.desc}</span>
                                 </div>
                             ))}

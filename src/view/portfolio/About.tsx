@@ -52,7 +52,7 @@ const About: React.FC = () => {
                         <div className='text-2xl grid gap-4 max-md:text-xl'>
                             {about.intro.map((item, index) => (
                                 <div key={index} className='flex'>
-                                    <span className='text-green-200 w-[170px]'>{item.title}: </span>
+                                    <span className='text-green-200 min-w-[170px] max-sm:min-w-[130px]'>{item.title}: </span>
                                     <span className='text-white'>{item.desc}</span>
                                 </div>
                             ))}
