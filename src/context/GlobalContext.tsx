@@ -39,7 +39,9 @@ import imgLinh2 from "../assets/img/linh2.png"
 
 import imgDTAReport from "../assets/img/imgProject/DTAReport/img1.png"
 import imgKLD from "../assets/img/imgProject/KLD/login.png"
-import imgCaNhan from "../assets/img/imgProject/LandingPage/img1.png"
+import imgCaNhan1 from "../assets/img/imgProject/LandingPage/img1.png"
+import imgCaNhan2 from "../assets/img/imgProject/LandingPage/img2.png"
+import imgCaNhan3 from "../assets/img/imgProject/LandingPage/img3.png"
 import imgScan from "../assets/img/imgProject/Scan/login.png"
 
 export interface Pages {
@@ -375,11 +377,25 @@ const defaultDetailProjects: DetailProjects[] = [
         link: "https://dta.ai.vn/",
     },
     {
-        img: imgCaNhan,
-        title: "Several personal projects",
+        img: imgCaNhan1,
+        title: "AI DRIVEN",
         desc: "b",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
-        link: "https://fe-aidriven-7b312.web.app/home", //https://landingpagecsecurity-65f64.web.app/home
+        link: "https://fe-aidriven-7b312.web.app/home",
+    },
+    {
+        img: imgCaNhan2,
+        title: "C CECURITY",
+        desc: "b",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        link: "https://landingpagecsecurity-65f64.web.app/home", //
+    },
+    {
+        img: imgCaNhan3,
+        title: "NEWS 24H",
+        desc: "b",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        link: "https://news24h-newsapi.web.app/home", //
     }
 ]
 
