@@ -51,14 +51,29 @@ const Projects: React.FC = () => {
                         >
                             <div className="relative z-20 h-full overflow-hidden rounded-[20px] after:absolute after:inset-0 ">
                                 <div
-                                    className="absolute w-[70%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 uppercase items-center justify-center rounded-[20px] text-center text-xl text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100"
+                                    className="absolute grid gap-4 w-[80%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 uppercase items-center justify-center rounded-[20px] text-center text-xl text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100"
                                     aria-hidden="true"
                                 >
                                     {item.title}
-                                </div>
+                                    <div className='flex gap-3 flex-wrap'>
+                                        {item.skills.map((skill, id) => (
+                                            <div key={id} className='px-[20px] py-[10px] text-green-white border-[1px] border-white rounded-full text-sm'>{skill}</div>
+                                        ))}
+                                    </div>
+                                    {/* <div className='p-[16px] flex w-full gap-4 justify-center'>
+                                        <a href={`${item.link}`} className=" flex gap-2 items-center bg-green-400 font-[800] shadow-sm transition duration-200 ease py-[10px] px-[20px] rounded-[15px]">
+                                            <span className=" transfrom duration-200 ease">{project.iconLive}</span>
+                                            {project.btnLive}
+                                        </a>
+                                        <a href={`${item.link}`} className=" flex gap-2 items-center border-1 border-green-400 text-green-400 font-[800] shadow-sm transition duration-200 ease py-[10px] px-[20px] rounded-[15px]">
+                                            <span className=" transfrom duration-200 ease">{project.iconGit}</span>
+                                            {project.btnCode}
+                                        </a>
+                                    </div> */}
 
+                                </div>
                                 <img
-                                    className="inline-flex aspect-video transition duration-300 ease-in-out transform opacity-100 group-hover/card:opacity-35 group-hover/card:scale-105"
+                                    className="inline-flex aspect-video transition duration-300 ease-in-out transform opacity-100 group-hover/card:opacity-20 group-hover/card:scale-105"
                                     src={item.img}
                                     alt={item.title}
                                 />

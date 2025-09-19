@@ -17,7 +17,8 @@ import {
     FaCode,
     FaHtml5,
     FaCss3Alt,
-    FaGitAlt
+    FaGitAlt,
+    FaExternalLinkSquareAlt 
 } from "react-icons/fa";
 import { FaBriefcase, FaCodeBranch } from "react-icons/fa6";
 import { CgMenu } from "react-icons/cg";
@@ -31,7 +32,6 @@ import { SiFramework, SiAdobeillustrator } from "react-icons/si";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
-import { GrFormNextLink } from "react-icons/gr";
 import { TbBrandGithubFilled } from "react-icons/tb";
 
 import imgLinh1 from "../assets/img/linh1.png"
@@ -358,21 +358,21 @@ const defaultDetailProjects: DetailProjects[] = [
     {
         img: imgKLD,
         title: "Communist Party of Vietnam's Discipline Handling Database",
-        desc: "",
+        desc: "Develop a data-management platform for disciplinary enforcement under the Communist Party of Vietnam, enabling rapid, accurate storage, retrieval and processing of information. The user-friendly interface enhances the end-user experience, supports multi-device access and boosts operational efficiency",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "https://ubkttw-qdkl.teca.vn/",
     },
     {
         img: imgScan,
         title: "Scan Records Management System",
-        desc: "b",
+        desc: "Build a Scan records management system that enables fast, accurate storage, retrieval and processing of information. The user-friendly interface enhances the end-user experience, supports multi-device access and boosts operational efficiency.",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "! Bảo mật do website chưa công khai",
     },
     {
         img: imgDTAReport,
         title: "DTA Service Reconciliation Report",
-        desc: "b",
+        desc: "Create a data visualization and reporting tool that helps businesses track, analyze, and quickly reconcile information—boosting lookup speed and optimizing the experience when working with large datasets.",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "https://dta.ai.vn/",
     },
@@ -393,8 +393,8 @@ const defaultDetailProjects: DetailProjects[] = [
     {
         img: imgCaNhan3,
         title: "NEWS 24H",
-        desc: "b",
-        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        desc: "News24h – your one-stop hub for real-time, round-the-clock updates. With an intuitive, mobile-first interface, the site lets you scan, search and surface the day’s top stories in seconds.  Smart filters, lightning-fast lookup and clutter-free layout turn endless headlines into an effortless, personalized news feed—so you stay informed anytime, anywhere.",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator", "NodeJS"],
         link: "https://news24h-newsapi.web.app/home", //
     }
 ]
@@ -404,8 +404,11 @@ export interface Project {
     slogan: string;
     title: string;
     desc: string;
-    details: DetailProjects[],
-    icon: JSX.Element
+    details: DetailProjects[];
+    btnLive: string;
+    iconLive: JSX.Element;
+    btnCode: string;
+    iconGit: JSX.Element
 }
 
 const defaultProject: Project = {
@@ -414,7 +417,10 @@ const defaultProject: Project = {
     title: "MY PROJECTS",
     desc: "Contributed to developing the user interface for an internal management application, focusing on intuitive design and optimizing user workflows.",
     details: defaultDetailProjects,
-    icon: <GrFormNextLink />
+    btnLive: "Live Demo",
+    iconLive: <FaExternalLinkSquareAlt  />,
+    btnCode: "Code",
+    iconGit: <TbBrandGithubFilled />
 }
 
 
