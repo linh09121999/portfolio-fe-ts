@@ -18,7 +18,7 @@ import {
     FaHtml5,
     FaCss3Alt,
     FaGitAlt,
-    FaExternalLinkSquareAlt 
+    FaExternalLinkSquareAlt
 } from "react-icons/fa";
 import { FaBriefcase, FaCodeBranch } from "react-icons/fa6";
 import { CgMenu } from "react-icons/cg";
@@ -40,8 +40,9 @@ import imgLinh2 from "../assets/img/linh2.png"
 import imgDTAReport from "../assets/img/imgProject/DTAReport/img1.png"
 import imgKLD from "../assets/img/imgProject/KLD/login.png"
 import imgCaNhan1 from "../assets/img/imgProject/LandingPage/img1.png"
-import imgCaNhan2 from "../assets/img/imgProject/LandingPage/img2.png"
+// import imgCaNhan2 from "../assets/img/imgProject/LandingPage/img2.png"
 import imgCaNhan3 from "../assets/img/imgProject/LandingPage/img3.png"
+import imgCaNhan4 from "../assets/img/imgProject/LandingPage/img4.png"
 import imgScan from "../assets/img/imgProject/Scan/login.png"
 
 export interface Pages {
@@ -356,6 +357,20 @@ export interface DetailProjects {
 
 const defaultDetailProjects: DetailProjects[] = [
     {
+        img: imgCaNhan4,
+        title: "Weather forecast",
+        desc: "",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator", "NodeJS"],
+        link: "https://weather-forecast-vn.web.app/", //
+    },
+    {
+        img: imgCaNhan3,
+        title: "NEWS 24H",
+        desc: "News24h – your one-stop hub for real-time, round-the-clock updates. With an intuitive, mobile-first interface, the site lets you scan, search and surface the day’s top stories in seconds.  Smart filters, lightning-fast lookup and clutter-free layout turn endless headlines into an effortless, personalized news feed—so you stay informed anytime, anywhere.",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator", "NodeJS"],
+        link: "https://news24h-newsapi.web.app/home", //
+    },
+    {
         img: imgKLD,
         title: "Communist Party of Vietnam's Discipline Handling Database",
         desc: "Develop a data-management platform for disciplinary enforcement under the Communist Party of Vietnam, enabling rapid, accurate storage, retrieval and processing of information. The user-friendly interface enhances the end-user experience, supports multi-device access and boosts operational efficiency",
@@ -383,20 +398,13 @@ const defaultDetailProjects: DetailProjects[] = [
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "https://fe-aidriven-7b312.web.app/home",
     },
-    {
-        img: imgCaNhan2,
-        title: "C CECURITY",
-        desc: "b",
-        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
-        link: "https://landingpagecsecurity-65f64.web.app/home", //
-    },
-    {
-        img: imgCaNhan3,
-        title: "NEWS 24H",
-        desc: "News24h – your one-stop hub for real-time, round-the-clock updates. With an intuitive, mobile-first interface, the site lets you scan, search and surface the day’s top stories in seconds.  Smart filters, lightning-fast lookup and clutter-free layout turn endless headlines into an effortless, personalized news feed—so you stay informed anytime, anywhere.",
-        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator", "NodeJS"],
-        link: "https://news24h-newsapi.web.app/home", //
-    }
+    // {
+    //     img: imgCaNhan2,
+    //     title: "C CECURITY",
+    //     desc: "b",
+    //     skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+    //     link: "https://landingpagecsecurity-65f64.web.app/home", //
+    // },
 ]
 
 export interface Project {
@@ -418,7 +426,7 @@ const defaultProject: Project = {
     desc: "Contributed to developing the user interface for an internal management application, focusing on intuitive design and optimizing user workflows.",
     details: defaultDetailProjects,
     btnLive: "Live Demo",
-    iconLive: <FaExternalLinkSquareAlt  />,
+    iconLive: <FaExternalLinkSquareAlt />,
     btnCode: "Code",
     iconGit: <TbBrandGithubFilled />
 }
