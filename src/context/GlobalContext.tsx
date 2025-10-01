@@ -45,6 +45,11 @@ import imgCaNhan3 from "../assets/img/imgProject/LandingPage/img3.png"
 import imgCaNhan4 from "../assets/img/imgProject/LandingPage/img4.png"
 import imgScan from "../assets/img/imgProject/Scan/login.png"
 
+import videoCaNhan4 from "../assets/video/project4.mp4"
+import videoCaNhan3 from "../assets/video/project3.mp4"
+import videoCaNhan1 from "../assets/video/project1.mp4"
+// import videoCaNhan2 from "../assets/video/project2.mp4"
+
 export interface Pages {
     id: string;
     title: string;
@@ -349,6 +354,7 @@ const defaultSkills: Skill = {
 
 export interface DetailProjects {
     img: string;
+    video: string;
     title: string;
     desc: string;
     skills: string[];
@@ -358,6 +364,7 @@ export interface DetailProjects {
 const defaultDetailProjects: DetailProjects[] = [
     {
         img: imgCaNhan4,
+        video: videoCaNhan4,
         title: "Weather forecast",
         desc: "",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator", "NodeJS"],
@@ -365,13 +372,15 @@ const defaultDetailProjects: DetailProjects[] = [
     },
     {
         img: imgCaNhan3,
-        title: "NEWS 24H",
+        video: videoCaNhan3,
+        title: "News 24H",
         desc: "News24h – your one-stop hub for real-time, round-the-clock updates. With an intuitive, mobile-first interface, the site lets you scan, search and surface the day’s top stories in seconds.  Smart filters, lightning-fast lookup and clutter-free layout turn endless headlines into an effortless, personalized news feed—so you stay informed anytime, anywhere.",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator", "NodeJS"],
         link: "https://news24h-newsapi.web.app/home", //
     },
     {
         img: imgKLD,
+        video: '',
         title: "Communist Party of Vietnam's Discipline Handling Database",
         desc: "Develop a data-management platform for disciplinary enforcement under the Communist Party of Vietnam, enabling rapid, accurate storage, retrieval and processing of information. The user-friendly interface enhances the end-user experience, supports multi-device access and boosts operational efficiency",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
@@ -379,6 +388,7 @@ const defaultDetailProjects: DetailProjects[] = [
     },
     {
         img: imgScan,
+        video: '',
         title: "Scan Records Management System",
         desc: "Build a Scan records management system that enables fast, accurate storage, retrieval and processing of information. The user-friendly interface enhances the end-user experience, supports multi-device access and boosts operational efficiency.",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
@@ -386,6 +396,7 @@ const defaultDetailProjects: DetailProjects[] = [
     },
     {
         img: imgDTAReport,
+        video: "",
         title: "DTA Service Reconciliation Report",
         desc: "Create a data visualization and reporting tool that helps businesses track, analyze, and quickly reconcile information—boosting lookup speed and optimizing the experience when working with large datasets.",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
@@ -393,13 +404,15 @@ const defaultDetailProjects: DetailProjects[] = [
     },
     {
         img: imgCaNhan1,
-        title: "AI DRIVEN",
+        video: videoCaNhan1,
+        title: "Ai Driven",
         desc: "b",
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "https://fe-aidriven-7b312.web.app/home",
     },
     // {
     //     img: imgCaNhan2,
+    // video: videoCaNhan2,
     //     title: "C CECURITY",
     //     desc: "b",
     //     skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],

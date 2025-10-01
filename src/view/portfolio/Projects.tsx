@@ -40,45 +40,84 @@ const Projects: React.FC = () => {
                     </div>
 
                 </div>
-                <div className='grid grid-col-1 md:grid-cols-2 gap-6'>
+                <div className='grid grid-col-1 md:grid-cols-2 gap-6 '>
                     {project.details.map((item, index) => (
+                        // <a key={index}
+                        //     data-aos="zoom-in-up"
+                        //     data-aos-delay={`${(index + 1) * 200}`}
+                        //     className="group/card w-full relative h-full overflow-hidden rounded-[20px] bg-black p-px transition-opacity duration-300 ease-in-out border-[1px] border-white/10"
+                        //     href={`${item.link}`}
+                        //     title={`${item.link}`}
+                        // >
+                        //     <div className="relative z-20 h-full overflow-hidden rounded-[20px] after:absolute after:inset-0 ">
+                        //         <div
+                        //             className="absolute grid gap-4 w-[80%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 uppercase items-center justify-center rounded-[20px] text-center text-xl text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100"
+                        //             aria-hidden="true"
+                        //         >
+                        //             {item.title}
+                        //             <div className='flex gap-3 flex-wrap'>
+                        //                 {item.skills.map((skill, id) => (
+                        //                     <div key={id} className='px-[20px] py-[10px] text-green-white border-[1px] border-white rounded-full text-sm'>{skill}</div>
+                        //                 ))}
+                        //             </div>
+
+                        //         </div>
+                        //         <img
+                        //             className="inline-flex aspect-video transition duration-300 ease-in-out transform opacity-100 group-hover/card:opacity-20 group-hover/card:scale-105"
+                        //             src={item.img}
+                        //             alt={item.title}
+                        //         />
+                        //     </div>
+                        // </a>
                         <a key={index}
                             data-aos="zoom-in-up"
                             data-aos-delay={`${(index + 1) * 200}`}
-                            className="group/card w-full relative h-full overflow-hidden rounded-[20px] bg-black p-px transition-opacity duration-300 ease-in-out border-[1px] border-white/10"
+                            className="group/card w-full h-full overflow-hidden rounded-[20px] bg-black p-px transition-opacity duration-300 ease-in-out p-2 border-[1px] border-green-100/10 backdrop-blur-[10px] bg-green-100/10"
                             href={`${item.link}`}
                             title={`${item.link}`}
                         >
-                            <div className="relative z-20 h-full overflow-hidden rounded-[20px] after:absolute after:inset-0 ">
+                            <div>
+                                <div className="relative z-20 h-full overflow-hidden">
+
+                                    {/* Ảnh mặc định */}
+                                    <img
+                                        className={`inline-flex aspect-video w-full h-full transition duration-300 ease-in-out transform ${item.video ? "" : "group-hover/card:opacity-20 group-hover/card:scale-105"}`}
+                                        src={item.img}
+                                        alt={item.title}
+                                    />
+
+                                    {/* Nếu có video thì render */}
+                                    {(item.video && item.video !== "") ? (
+                                        <video
+                                            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"
+                                            src={item.video}
+                                            autoPlay
+                                            muted
+                                            loop
+                                        />
+                                    ) : <div
+                                        className="absolute grid gap-4 w-[80%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 uppercase items-center justify-center rounded-[20px] text-center text-xl text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100 z-30"
+                                        aria-hidden="true"
+                                    >
+                                        Internal project – no public demo.
+                                    </div>
+                                    }
+                                </div>
                                 <div
-                                    className="absolute grid gap-4 w-[80%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 uppercase items-center justify-center rounded-[20px] text-center text-xl text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover/card:opacity-100"
+                                    className=" grid gap-4 h-full items-center text-white p-[30px] transition-opacity duration-300 ease-in-out"
                                     aria-hidden="true"
                                 >
-                                    {item.title}
-                                    <div className='flex gap-3 flex-wrap'>
+                                    <p className='text-green-400 text-2xl'>{item.title}</p>
+                                    <div className='flex gap-3 flex-wrap text-xl text-white/50'>
                                         {item.skills.map((skill, id) => (
-                                            <div key={id} className='px-[20px] py-[10px] text-green-white border-[1px] border-white rounded-full text-sm'>{skill}</div>
+                                            <div key={id} className='px-[20px] py-[10px] border-[1px] border-white/50 rounded-full text-sm relative before:rounded-full before:absolute before:content-[""] before:top-0 before:left-1/2 before:h-full before:w-0 before:bg-green-400 before:opacity-0 before:transition-all before:duration-300 before:ease before:-z-1 hover:before:border-0 hover:before:left-0 hover:before:w-full hover:before:opacity-100 hover:text-black hover:font-bold'>{skill}</div>
                                         ))}
                                     </div>
-                                    {/* <div className='p-[16px] flex w-full gap-4 justify-center'>
-                                        <a href={`${item.link}`} className=" flex gap-2 items-center bg-green-400 font-[800] shadow-sm transition duration-200 ease py-[10px] px-[20px] rounded-[15px]">
-                                            <span className=" transfrom duration-200 ease">{project.iconLive}</span>
-                                            {project.btnLive}
-                                        </a>
-                                        <a href={`${item.link}`} className=" flex gap-2 items-center border-1 border-green-400 text-green-400 font-[800] shadow-sm transition duration-200 ease py-[10px] px-[20px] rounded-[15px]">
-                                            <span className=" transfrom duration-200 ease">{project.iconGit}</span>
-                                            {project.btnCode}
-                                        </a>
-                                    </div> */}
 
                                 </div>
-                                <img
-                                    className="inline-flex aspect-video transition duration-300 ease-in-out transform opacity-100 group-hover/card:opacity-20 group-hover/card:scale-105"
-                                    src={item.img}
-                                    alt={item.title}
-                                />
                             </div>
                         </a>
+
                     ))}
                 </div>
             </div>
