@@ -28,7 +28,7 @@ import {
 } from "react-icons/io5";
 import { MdNavigateNext } from "react-icons/md";
 import { VscVscodeInsiders, VscVscode } from "react-icons/vsc";
-import { SiFramework, SiAdobeillustrator } from "react-icons/si";
+import { SiFramework, SiAdobeillustrator, SiPostman, SiMui, SiChartdotjs } from "react-icons/si";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { BsLayers } from "react-icons/bs";
@@ -40,15 +40,18 @@ import imgLinh2 from "../assets/img/linh2.png"
 import imgDTAReport from "../assets/img/imgProject/DTAReport/img1.png"
 import imgKLD from "../assets/img/imgProject/KLD/login.png"
 import imgCaNhan1 from "../assets/img/imgProject/LandingPage/img1.png"
-// import imgCaNhan2 from "../assets/img/imgProject/LandingPage/img2.png"
+import imgCaNhan2 from "../assets/img/imgProject/LandingPage/img2.png"
 import imgCaNhan3 from "../assets/img/imgProject/LandingPage/img3.png"
 import imgCaNhan4 from "../assets/img/imgProject/LandingPage/img4.png"
+import imgCaNhan5 from "../assets/img/imgProject/LandingPage/img5.png"
+
 import imgScan from "../assets/img/imgProject/Scan/login.png"
 
+import videoCaNhan5 from "../assets/video/project5.mp4"
 import videoCaNhan4 from "../assets/video/project4.mp4"
 import videoCaNhan3 from "../assets/video/project3.mp4"
 import videoCaNhan1 from "../assets/video/project1.mp4"
-// import videoCaNhan2 from "../assets/video/project2.mp4"
+import videoCaNhan2 from "../assets/video/project2.mp4"
 
 export interface Pages {
     id: string;
@@ -283,6 +286,20 @@ const defaultDetailSkills: DetailSkills[] = [
         categories: [1, 3]
     },
     {
+        icon: <SiMui />,
+        title: "Material Ui",
+        desc: "A React component library implementing Google's Material Design with ready-to-use UI components for fast web development.",
+        ratio: 80,
+        categories: [1, 3]
+    },
+    {
+        icon: <SiChartdotjs />,
+        title: "Chart.js",
+        desc: "An open-source JavaScript library for creating simple and flexible charts.",
+        ratio: 80,
+        categories: [1, 3]
+    },
+    {
         icon: <FaGitAlt />,
         title: "Git",
         desc: "The industry-standard distributed version control system for tracking code changes and enabling team collaboration.",
@@ -303,6 +320,13 @@ const defaultDetailSkills: DetailSkills[] = [
         ratio: 80,
         categories: [1, 4]
     },
+    {
+        icon: <SiPostman />,
+        title: "Postman",
+        desc: "A leading API platform that enables developers to design, test, and manage APIs.",
+        ratio: 90,
+        categories: [1, 4]
+    }
 ]
 
 export interface TabsSkills {
@@ -363,6 +387,14 @@ export interface DetailProjects {
 
 const defaultDetailProjects: DetailProjects[] = [
     {
+        img: imgCaNhan5,
+        video: videoCaNhan5,
+        title: "Spee e-commerce",
+        desc: "",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        link: "https://spee-e-commerce-fe.web.app/"
+    },
+    {
         img: imgCaNhan4,
         video: videoCaNhan4,
         title: "Weather forecast",
@@ -410,14 +442,14 @@ const defaultDetailProjects: DetailProjects[] = [
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "https://fe-aidriven-7b312.web.app/home",
     },
-    // {
-    //     img: imgCaNhan2,
-    // video: videoCaNhan2,
-    //     title: "C CECURITY",
-    //     desc: "b",
-    //     skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
-    //     link: "https://landingpagecsecurity-65f64.web.app/home", //
-    // },
+    {
+        img: imgCaNhan2,
+        video: videoCaNhan2,
+        title: "C CECURITY",
+        desc: "b",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        link: "https://landingpagecsecurity-65f64.web.app/home", //
+    },
 ]
 
 export interface Project {

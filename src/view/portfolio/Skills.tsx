@@ -76,11 +76,13 @@ const Skills: React.FC = () => {
                                 <article
                                     className={`h-full flex flex-col justify-between gap-2 relative rounded-[20px] bg-green-100/10 p-[30px] backdrop-blur-[10px] transition-opacity border-[1px] border-green-100/10  ${!detail.categories.includes(category) ? "opacity-30" : "relative h-full overflow-hidden before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-green-20/20 before:opacity-0 before:blur-3xl before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-64 after:w-64 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-green-500/50 after:opacity-0 after:blur-3xl after:transition-opacity after:duration-500 hover:after:opacity-20 group-hover:before:opacity-100"}`}
                                 >
-                                    <div className="text-green-400 text-4xl mb-4">
-                                        {detail.icon}
+                                    <div>
+                                        <div className="text-green-400 text-4xl mb-4">
+                                            {detail.icon}
+                                        </div>
+                                        <h3 className="text-2xl font-nacelle text-white mb-2">{detail.title}</h3>
+                                        <p className="text-white/50 mb-4 text-xl">{detail.desc}</p>
                                     </div>
-                                    <h3 className="text-2xl font-nacelle text-white mb-2">{detail.title}</h3>
-                                    <p className="text-white/50 mb-4 text-xl">{detail.desc}</p>
                                     <div className="w-full bg-green-400/10 rounded-full h-2.5">
                                         <div className="skill-bar bg-gradient-to-r from-green-400/40 to-green-400 h-2.5 rounded-full" style={{ width: `${detail.ratio}%` }}></div>
                                     </div>
