@@ -40,18 +40,19 @@ import imgLinh2 from "../assets/img/linh2.png"
 import imgDTAReport from "../assets/img/imgProject/DTAReport/img1.png"
 import imgKLD from "../assets/img/imgProject/KLD/login.png"
 import imgCaNhan1 from "../assets/img/imgProject/LandingPage/img1.png"
-import imgCaNhan2 from "../assets/img/imgProject/LandingPage/img2.png"
+// import imgCaNhan2 from "../assets/img/imgProject/LandingPage/img2.png"
 import imgCaNhan3 from "../assets/img/imgProject/LandingPage/img3.png"
 import imgCaNhan4 from "../assets/img/imgProject/LandingPage/img4.png"
 import imgCaNhan5 from "../assets/img/imgProject/LandingPage/img5.png"
+import imgCaNhan6 from "../assets/img/imgProject/LandingPage/img6.png"
 
 import imgScan from "../assets/img/imgProject/Scan/login.png"
-
+import videoCaNhan6 from "../assets/video/project6.mp4"
 import videoCaNhan5 from "../assets/video/project5.mp4"
 import videoCaNhan4 from "../assets/video/project4.mp4"
 import videoCaNhan3 from "../assets/video/project3.mp4"
 import videoCaNhan1 from "../assets/video/project1.mp4"
-import videoCaNhan2 from "../assets/video/project2.mp4"
+// import videoCaNhan2 from "../assets/video/project2.mp4"
 
 export interface Pages {
     id: string;
@@ -395,6 +396,14 @@ const defaultDetailProjects: DetailProjects[] = [
         link: "https://spee-e-commerce-fe.web.app/"
     },
     {
+        img: imgCaNhan6,
+        video: videoCaNhan6,
+        title: "Sflow watchmode",
+        desc: "",
+        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+        link: "https://sflow-watchmode-fe.web.app/"
+    },
+    {
         img: imgCaNhan4,
         video: videoCaNhan4,
         title: "Weather forecast",
@@ -442,14 +451,14 @@ const defaultDetailProjects: DetailProjects[] = [
         skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
         link: "https://fe-aidriven-7b312.web.app/home",
     },
-    {
-        img: imgCaNhan2,
-        video: videoCaNhan2,
-        title: "C CECURITY",
-        desc: "b",
-        skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
-        link: "https://landingpagecsecurity-65f64.web.app/home", //
-    },
+    // {
+    //     img: imgCaNhan2,
+    //     video: videoCaNhan2,
+    //     title: "C CECURITY",
+    //     desc: "b",
+    //     skills: ["ReactJS", "Tailwind CSS", "Adobe Illustrator"],
+    //     link: "https://landingpagecsecurity-65f64.web.app/home", //
+    // },
 ]
 
 export interface Project {
